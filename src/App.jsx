@@ -1,5 +1,11 @@
-import { BrowserRouter, Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
+
 import Header from "./Components/Header";
 import Audio from "./Components/Audio";
 import Home from "./Pages/Home";
@@ -16,6 +22,7 @@ import Testimonials from "./Pages/Testimonials";
 
 function UpdateTitle() {
   const location = useLocation();
+
   useEffect(() => {
     let pageTitle = "Randula Jey Photography";
 
@@ -74,8 +81,8 @@ function AppRoutes() {
             <>
               <section id="home"><Home /></section>
               <section id="testimonials"><Testimonials /></section>
-              <div className="mt-10"> <section id="faq"><FAQ /></section></div>
-              <div className="-mt-10"> <section id="contact"><Contact /></section></div>
+              <div className="mt-10"><section id="faq"><FAQ /></section></div>
+              <div className="-mt-10"><section id="contact"><Contact /></section></div>
             </>
           }
         />
@@ -85,16 +92,23 @@ function AppRoutes() {
         <Route path="/" element={<MainAlbumCompo />} />
         <Route path="/album/:albumId" element={<PerAlbum />} />
       </Routes>
-    <Footer />
+      <Footer />
     </>
   );
 }
 
 export default function App() {
+  const [initialLoading, setInitialLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setInitialLoading(false), 5000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <BrowserRouter>
       <UpdateTitle />
-      <AppRoutes />
+      {initialLoading ? <LoadingSpinnerCompo /> : <AppRoutes />}
     </BrowserRouter>
   );
 }

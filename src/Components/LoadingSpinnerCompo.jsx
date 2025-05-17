@@ -2,7 +2,7 @@ import RandulaJay_Logo from '../assets/RandulaJay_Logo.png';
 
 const LoadingSpinnerCompo = () => {
   const animationStyle = {
-    animation: 'fadeFlip 2s ease-in-out forwards, scaleFadeOut 1s ease-out 3.2s forwards'
+    animation: 'fadeFlip 2s linear infinite'
   };
 
   return (
@@ -11,7 +11,7 @@ const LoadingSpinnerCompo = () => {
         {`
           @keyframes fadeFlip {
             0% {
-              opacity: 0;
+              opacity: 0.5;
               transform: rotateY(0deg);
             }
             30% {
@@ -23,19 +23,8 @@ const LoadingSpinnerCompo = () => {
               transform: rotateY(270deg);
             }
             100% {
-              opacity: 1;
+              opacity: 0.5;
               transform: rotateY(360deg);
-            }
-          }
-
-          @keyframes scaleFadeOut {
-            0% {
-              opacity: 1;
-              transform: scale(1);
-            }
-            100% {
-              opacity: 0;
-              transform: scale(0.5);
             }
           }
         `}
@@ -43,7 +32,7 @@ const LoadingSpinnerCompo = () => {
       <img
         src={RandulaJay_Logo}
         alt="Randula Jay Logo"
-        className="w-35 h-35"
+        className="w-20 h-35"
         style={animationStyle}
       />
     </div>
