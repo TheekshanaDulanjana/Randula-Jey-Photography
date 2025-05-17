@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@layer base {
+
+  .font-bellefair {
+    font-family: 'Bellefair', serif;
+  }
+  .font-belleza {
+    font-family: 'Belleza', sans-serif;
+  }
+  
+  .font-bilbo {
+    font-family: 'Bilbo Swash Caps', cursive;
+  }
+
+  .font-poppins {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  :root {
+    --RandulaBlue: #1b1464;
+  }
+
+  body, html {
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f3f4f6;
+  }
+
+::-webkit-scrollbar-thumb {
+    background: #999999; 
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #16133f; 
+    opacity: 0.8; 
+}
+  
+}
