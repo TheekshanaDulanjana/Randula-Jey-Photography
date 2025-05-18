@@ -20,6 +20,27 @@ import PerAlbum from "./Components/PerAlbum";
 import MainAlbumCompo from "./Components/MainAlbumCompo";
 import Testimonials from "./Pages/Testimonials";
 
+function useGoogleAnalytics() {
+  useEffect(() => {
+    const GA_ID = import.meta.env.VITE_GA_MEASUREMENT_ID;
+    if (!GA_ID) return;
+
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+    document.head.appendChild(script);
+
+    const inlineScript = document.createElement("script");
+    inlineScript.innerHTML = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '${GA_ID}');
+    `;
+    document.head.appendChild(inlineScript);
+  }, []);
+}
+
 function UpdateTitle() {
   const location = useLocation();
 
@@ -46,7 +67,7 @@ function UpdateTitle() {
         pageTitle = "Support | Randula Jey Photography";
         break;
       case "/#contact":
-        pageTitle = "Inquiry Randula Jey Photography";
+        pageTitle = "Inquiry | Randula Jey Photography";
         break;
       default:
         break;
@@ -99,6 +120,7 @@ function AppRoutes() {
 
 export default function App() {
   const [initialLoading, setInitialLoading] = useState(true);
+  useGoogleAnalytics(); // 🔥 Load GA on app start
 
   useEffect(() => {
     const timer = setTimeout(() => setInitialLoading(false), 5000);

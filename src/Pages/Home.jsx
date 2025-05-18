@@ -133,7 +133,7 @@ const [recentRef, recentInView] = useInView({
             <span>|</span>
             <a href="https://www.instagram.com/randula_jey_photography/" target="_blank" rel="noopener noreferrer" className="w-4 h-4 flex items-center justify-center text-white hover:text-pink-600"><SiInstagram size={isMobile ? 18 : 24} /></a>
             <span>|</span>
-            <a target="_blank" rel="noopener noreferrer" className="w-4 h-4 flex items-center justify-center text-white hover:text-blue-400"><SiLinkedin size={isMobile ? 18 : 24} /></a>
+            <a href="https://www.linkedin.com/in/randula-jey-bba4692a8/" target="_blank" rel="noopener noreferrer" className="w-4 h-4 flex items-center justify-center text-white hover:text-blue-400"><SiLinkedin size={isMobile ? 18 : 24} /></a>
           </div>
         </motion.div>
       </div>

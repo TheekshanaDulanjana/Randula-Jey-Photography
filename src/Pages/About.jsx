@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { SiFacebook, SiInstagram, SiWhatsapp } from 'react-icons/si';
+import { SiFacebook, SiInstagram, SiLinkedin, SiWhatsapp } from 'react-icons/si';
 
 import AboutBgImg from '../assets/AboutBgImg.jpg';
 import aboutMan from '../assets/about.jpg';
@@ -32,13 +32,19 @@ const About = () => {
       title: 'Facebook',
       href: 'https://www.facebook.com/janantha.randula.73',
       icon: <SiFacebook />,
-      color: 'text-blue-600',
+      color: 'text-blue-800',
     },
     {
       title: 'Instagram',
       href: 'https://www.instagram.com/randula_jey/',
       icon: <SiInstagram />,
       color: 'text-pink-600',
+    },
+        {
+      title: 'Linkedin',
+      href: 'https://www.linkedin.com/in/randula-jey-bba4692a8/',
+      icon: <SiLinkedin />,
+      color: 'text-blue-500',
     },
   ];
 
@@ -170,7 +176,7 @@ const About = () => {
               transition={{ duration: 1, delay: 0.6 }}
             >
               <p className="text-gray-800 font-bellefair text-sm sm:text-base md:text-lg mt-[2px] sm:mt-[4px]">Follow me on!</p>
-              {socialLinks.map(({ title, href, icon, color }) => (
+              {socialLinks.map(({ title, href, icon, color }, index) => (
                 <React.Fragment key={title}>
                   <a
                     title={title}
@@ -181,7 +187,10 @@ const About = () => {
                   >
                     {icon}
                   </a>
-                  <p className="text-gray-800 text-sm sm:text-base"> | </p>
+                  {index !== socialLinks.length - 1 && (
+                    <p className="text-gray-800 text-sm sm:text-base"> | </p>
+                  )}
+                  
                 </React.Fragment>
               ))}
             </motion.div>
