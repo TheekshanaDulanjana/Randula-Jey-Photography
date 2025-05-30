@@ -143,12 +143,12 @@ export default function Footer() {
             <ul className="space-y-3 text-gray-700">
               <li className="flex items-center sm:justify-start justify-center gap-2">
                 <a
-                  href="https://mail.google.com/mail/?view=cm&to=info@randulajey.com"
+                  href="https://mail.google.com/mail/?view=cm&to=janantharandula123@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className=" text-lg hover:text-[var(--RandulaBlue)]"
                 >
-                  info@randulajey.com
+                  janantharandula123@gmail.com
                 </a>
               </li>
               <li className="text-lg flex items-center sm:justify-center justify-center gap-2 max-w-[500px]">
@@ -191,12 +191,12 @@ export default function Footer() {
           {/* Column 5: Social Links */}
           <div className="sm:pl-4 md:ml-8 flex flex-col items-center sm:items-start">
             <h3 className="text-2xl mb-4">Social Links</h3>
-            <div className="flex flex-col space-y-3 text-gray-700">
+            <div className="flex flex-col space-y-2 text-gray-700">
               <a
                 href="https://www.facebook.com/RANDULAJEYPHOTOGRAPHY"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center text-lg hover:text-blue-800 transition-colors"
+                className="flex items-center text-lg hover:text-[var(--RandulaBlue)] transition-colors"
               >
                 <SiFacebook className="w-4 mr-2 text-xl" /> Facebook
               </a>
@@ -204,7 +204,7 @@ export default function Footer() {
                 href="https://www.instagram.com/randula_jey_photography/"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center text-lg hover:text-pink-600 transition-colors"
+                className="flex items-center text-lg hover:text-[var(--RandulaBlue)] transition-colors"
               >
                 <SiInstagram className="w-4 mr-2 text-xl" /> Instagram
               </a>
@@ -212,7 +212,7 @@ export default function Footer() {
                 href="/"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center text-lg hover:text-blue-600 transition-colors"
+                className="flex items-center text-lg hover:text-[var(--RandulaBlue)] transition-colors"
               >
                 <SiLinkedin className="w-4 mr-2 text-xl" /> LinkedIn
               </a>

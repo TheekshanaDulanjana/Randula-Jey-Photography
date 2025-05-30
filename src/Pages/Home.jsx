@@ -144,7 +144,7 @@ const [recentRef, recentInView] = useInView({
         <motion.div
           className={`absolute font-bilbo text-black opacity-20 ${
             isMobile ? 'text-4xl mt-2 ' : 
-            isTablet ? 'text-8xl mt-3 ' : 'text-8xl pt-35'}`}
+            isTablet ? 'text-6xl mt-3 ' : 'text-8xl pt-35'}`}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 0.25, transition: { duration: 0.1 } }}
           viewport={{ once: true, margin: "-100px" }}

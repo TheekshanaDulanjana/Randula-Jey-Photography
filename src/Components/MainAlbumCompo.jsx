@@ -106,8 +106,8 @@ export default function MainAlbumCompo({ searchTerm = '' }) {
             <Albums key={index} item={item} index={index} />
           ))
         ) : (
-          <p className="text-center text-lg text-[var(--RandulaBlue)] font-bellefair uppercase pt-20 pb-20">No results found! 
-          <br /> <span className='uppercase text-gray-700 text-xl'>Sorry, we couldn't find anything matching your search!</span></p>
+          <p className="text-center text-2xl text-[var(--RandulaBlue)] font-bellefair  pt-20 pb-20">No results found! 
+          <br /> <span className=' text-gray-700 text-2xl'>Sorry, We couldn't find anything matching your search!</span></p>
         )}
       </div>
 

@@ -5,11 +5,11 @@ import 'aos/dist/aos.css';
 import { SiFacebook, SiInstagram, SiLinkedin, SiWhatsapp } from 'react-icons/si';
 
 import AboutBgImg from '../assets/AboutBgImg.jpg';
-import aboutMan from '../assets/about.jpg';
-import aboutMan2 from '../assets/p1.jpg';
-import ThreeInOne from '../assets/AboutBgImg.jpg';
-import ThreeInTwo from '../assets/l4.jpg';
-import ThreeInThree from '../assets/l5.jpg';
+import aboutMan from '../assets/About01.jpg';
+import aboutMan2 from '../assets/About02.jpg';
+import ThreeInOne from '../assets/ThreeInOne.jpg';
+import ThreeInTwo from '../assets/ThreeInTwo.jpg';
+import ThreeInThree from '../assets/ThreeInThree.jpg';
 
 const About = () => {
   const [selectedImage, setSelectedImage] = useState(null);

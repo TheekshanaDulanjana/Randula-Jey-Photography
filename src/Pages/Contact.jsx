@@ -36,7 +36,7 @@ const Contact = () => {
     {
       icon: <Mail />,
       title: 'Write to us!',
-      content: <a href="https://mail.google.com/mail/?view=cm&to=info@randulajay.com">info@randulajay.com</a>
+      content: <a href="https://mail.google.com/mail/?view=cm&to=janantharandula123@gmail.com">janantharandula123@gmail.com</a>
     },
   ];
 
