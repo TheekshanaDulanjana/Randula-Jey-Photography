@@ -62,7 +62,7 @@ const PerAlbum = () => {
   };
 
   return (
-    <div className="relative w-full mt-14">
+    <div className="relative w-full mt-19">
       {/* Hero Section */}
       <div className="relative w-full h-72 md:h-72 overflow-hidden">
         <div className="w-full h-full">

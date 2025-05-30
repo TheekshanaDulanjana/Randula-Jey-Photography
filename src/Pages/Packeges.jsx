@@ -10,7 +10,7 @@ export default function Packages() {
   const [selectedPackage, setSelectedPackage] = useState('wedding');
 
   return (
-    <div className="relative w-full mt-16">
+    <div className="relative w-full mt-19">
       <div className="relative w-full h-72 md:h-72 overflow-hidden">
         <motion.div
           className="w-full h-full"

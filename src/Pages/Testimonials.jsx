@@ -54,7 +54,6 @@ export default function TestimonialsCompo() {
     );
   };
 
-  // ✅ Touch handlers
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
 

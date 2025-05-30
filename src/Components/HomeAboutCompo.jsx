@@ -7,11 +7,13 @@ import { motion, useInView } from 'framer-motion';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 
-import p1 from '../assets/p1.jpg';
-import p2 from '../assets/p2.jpg';
-import p3 from '../assets/p3.jpg';
+import HomeAbt01 from '../assets/HomeAbt01.jpg';
+import HomeAbt02 from '../assets/HomeAbt02.jpg';
+import HomeAbt03 from '../assets/HomeAbt03.jpg';  
+import HomeAbt04 from '../assets/HomeAbt04.jpg';
+import HomeAbt05 from '../assets/HomeAbt05.jpg';
 
-const aboutImages = [p1, p2, p3];
+const aboutImages = [HomeAbt01, HomeAbt02, HomeAbt03, HomeAbt04, HomeAbt05];
 
 const HomeAboutCompo = () => {
   const navigate = useNavigate();
@@ -44,35 +46,35 @@ const HomeAboutCompo = () => {
             <div className="w-[50px] border-t border-gray-400" />
           </div>
 
-            <h1 className="text-2xl sm:text-3xl md:text-4xl text-[var(--RandulaBlue)] font-bellefair mb-3 sm:mb-4">
-              Who We Are?
-            </h1>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl text-[var(--RandulaBlue)] font-bellefair mb-3 sm:mb-4">
+            Who We Are?
+          </h1>
 
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-800 font-bellefair leading-relaxed mb-4 sm:mb-6">
-              Capture your most cherished moments with timeless beauty and elegance.<br className="hidden sm:block" />
-              Every photograph tells a story, reflecting love and creativity.<br className="hidden sm:block" />
-              Specializing in wedding, event, and commercial photography,<br className="hidden sm:block" />
-              I create memories that last forever.<br className="hidden sm:block" />
-              Let's make your special day unforgettable.
-            </p>
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-800 font-bellefair leading-relaxed mb-4 sm:mb-6">
+            Capture your most cherished moments with timeless beauty and elegance.<br className="hidden sm:block" />
+            Every photograph tells a story, reflecting love and creativity.<br className="hidden sm:block" />
+            Specializing in wedding, event, and commercial photography,<br className="hidden sm:block" />
+            I create memories that last forever.<br className="hidden sm:block" />
+            Let's make your special day unforgettable.
+          </p>
 
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <button
-                title="Essence"
-                onClick={() => {
-                  window.scrollTo({ top: 0, behavior: 'instant' });
-                  navigate('/about');
-                }}
-                className="font-bellefair px-5 sm:px-6 py-1 sm:py-2 text-sm sm:text-base bg-transparent text-[var(--RandulaBlue)] border border-[var(--RandulaBlue)] relative overflow-hidden backdrop-blur-sm transition duration-300 group"
-              >
-                <span className="relative z-10 group-hover:text-white">more info...</span>
-                <span className="absolute left-0 bottom-0 w-0 h-full bg-[var(--RandulaBlue)] transition-all duration-300 group-hover:w-full z-0" />
-              </button>
-            </div>
-          </motion.div>
-        </div>
-      
-      {/* Right*/}
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <button
+              title="Essence"
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: 'instant' });
+                navigate('/about');
+              }}
+              className="font-bellefair px-5 sm:px-6 py-1 sm:py-2 text-sm sm:text-base bg-transparent text-[var(--RandulaBlue)] border border-[var(--RandulaBlue)] relative overflow-hidden backdrop-blur-sm transition duration-300 group"
+            >
+              <span className="relative z-10 group-hover:text-white">more info...</span>
+              <span className="absolute left-0 bottom-0 w-0 h-full bg-[var(--RandulaBlue)] transition-all duration-300 group-hover:w-full z-0" />
+            </button>
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Right */}
       <div className="w-full lg:w-1/2 h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden relative">
         <Swiper
           spaceBetween={0}
@@ -94,25 +96,15 @@ const HomeAboutCompo = () => {
                 animate={{ opacity: 1, filter: 'blur(0px)' }}
                 transition={{ duration: 1.5, ease: [0.42, 0, 0.58, 1] }}
               >
-                <motion.img
+                <img
                   src={img}
                   alt={`About Slide ${i + 1}`}
                   className="w-full h-full object-cover"
-                  initial={{ scale: 1.05 }}
-                  animate={{ scale: isMobile ? 1.3 : 1.15 }}
-                  transition={{
-                    duration: 10,
-                    repeat: Infinity,
-                    repeatType: 'reverse',
-                    ease: [0.42, 0, 0.58, 1],
-                  }}
                 />
               </motion.div>
             </SwiperSlide>
           ))}
         </Swiper>
-
-
       </div>
     </div>
   );

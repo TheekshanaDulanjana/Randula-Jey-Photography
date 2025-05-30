@@ -40,7 +40,7 @@ const About = () => {
       icon: <SiInstagram />,
       color: 'text-pink-600',
     },
-        {
+    {
       title: 'Linkedin',
       href: 'https://www.linkedin.com/in/randula-jey-bba4692a8/',
       icon: <SiLinkedin />,
@@ -51,7 +51,7 @@ const About = () => {
   const images = [ThreeInOne, ThreeInTwo, ThreeInThree];
 
   return (
-    <div className="relative w-full mt-14">
+    <div className="relative w-full mt-19">
       {selectedImage && (
         <div
           className="fixed inset-0 bg-black/50 backdrop-blur-lg z-50 flex items-center justify-center p-4"
@@ -156,7 +156,7 @@ const About = () => {
             </motion.h1>
 
             <motion.p
-              className="text-sm sm:text-base md:text-lg leading-6 sm:leading-7 md:leading-8 text-gray-800 font-bellefair"
+              className="text-sm sm:text-base md:text-xl leading-6 sm:leading-7 md:leading-8 text-gray-800 font-bellefair"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.6 }}
@@ -175,7 +175,7 @@ const About = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.6 }}
             >
-              <p className="text-gray-800 font-bellefair text-sm sm:text-base md:text-lg mt-[2px] sm:mt-[4px]">Follow me on!</p>
+              <p className="text-gray-800 font-bellefair text-sm sm:text-base md:text-xl mt-[2px] sm:mt-[4px]">Follow me on!</p>
               {socialLinks.map(({ title, href, icon, color }, index) => (
                 <React.Fragment key={title}>
                   <a
@@ -190,7 +190,6 @@ const About = () => {
                   {index !== socialLinks.length - 1 && (
                     <p className="text-gray-800 text-sm sm:text-base"> | </p>
                   )}
-                  
                 </React.Fragment>
               ))}
             </motion.div>
@@ -236,7 +235,7 @@ const About = () => {
             </motion.h1>
 
             <motion.p
-              className="text-sm sm:text-base md:text-lg leading-6 sm:leading-7 md:leading-8 text-gray-800 font-bellefair"
+              className="text-sm sm:text-base md:text-xl leading-6 sm:leading-7 md:leading-8 text-gray-800 font-bellefair"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.6 }}
@@ -252,7 +251,7 @@ const About = () => {
           </div>
 
           <motion.div
-            className="w-full md:w-1/2 flex sm:justify-center md:justify-center lg:justify-end order-first md:order-last"
+            className="w-full md:w-1/2 flex justify-center md:justify-center lg:justify-end order-first md:order-last"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6 }}

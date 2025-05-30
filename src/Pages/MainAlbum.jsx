@@ -17,7 +17,7 @@ const MainAlbum = () => {
   };
 
   return (
-    <div className="w-full mt-16">
+    <div className="w-full mt-19">
       {/* Header Section with Animated Image and Overlay */}
       <div className="relative w-full h-72 md:h-72 overflow-hidden">
         <motion.div

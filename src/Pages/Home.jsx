@@ -19,6 +19,7 @@ import MainBG2L from '../assets/MainBG2.jpg';
 import MainBG3L from '../assets/MainBG3.jpg';
 import MainBG4L from '../assets/MainBG4.jpg';
 import MainBG5L from '../assets/MainBG5.jpg';
+import MainBG6L from '../assets/MainBG6.jpg';
 
 import MainBG1P from '../assets/MainBG1P.jpg';
 import MainBG2P from '../assets/MainBG2P.jpg'; 
@@ -46,7 +47,7 @@ const Home = () => {
 
   const currentSlideshowImages = isMobile || isTablet
     ? [MainBG1P, MainBG2P, MainBG3P, MainBG4P]
-    : [MainBG1L, MainBG2L, MainBG3L, MainBG4L, MainBG5L];
+    : [MainBG1L, MainBG2L, MainBG3L, MainBG4L, MainBG5L, MainBG6L];
 
   const swiperKey = `${isMobile || isTablet ? 'portrait' : 'landscape'}`;
 
@@ -62,7 +63,7 @@ const [recentRef, recentInView] = useInView({
 
   return (
     <>
-      <div className="w-full mt-14 h-screen overflow-hidden relative">
+      <div className="w-full mt-19 h-screen overflow-hidden relative">
         <Swiper
           key={swiperKey}
           spaceBetween={0}

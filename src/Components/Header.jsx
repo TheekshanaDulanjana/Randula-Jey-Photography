@@ -139,8 +139,8 @@ export default function Header() {
   };
 
   return (
-    <header className={`bg-white fixed top-0 left-0 w-full z-50 h-16`}>
-      <div className={`bg-white fixed top-0 left-0 w-full z-50 h-16 shadow-sm backdrop-blur-lg duration-[1500ms] `}>
+    <header className={`bg-white fixed top-0 left-0 w-full z-50 h-20`}>
+      <div className={`bg-white fixed top-0 left-0 w-full z-50 h-20 shadow-sm backdrop-blur-lg duration-[1500ms] `}>
         <div className="flex justify-between items-center max-w-full lg:px-12 xl:px-20 mx-auto px-4 sm:px-6 h-full">
           {/* Logo */}
           <button onClick={handleLogoClick} className="cursor-pointer">
