@@ -63,9 +63,9 @@ const Faq = () => {
           }`}
           onClick={() => setOpenId(isOpen ? null : id)}
         >
-          <div className="flex justify-between items-start text-[var(--RandulaBlue)] text-2xl sm:text-2xl ">
+          <div className="flex justify-between items-start text-[var(--RandulaBlue)] text-xl sm:text-xl ">
             <span>{id}. {question}</span>
-            <span className={`text-2xl transition-transform duration-200 ${isOpen ? 'rotate-0' : 'rotate-45'}`}>
+            <span className={`text-xl transition-transform duration-200 ${isOpen ? 'rotate-0' : 'rotate-45'}`}>
               {isOpen ? '−' : '+'}
             </span>
           </div>
@@ -87,8 +87,9 @@ const Faq = () => {
   return (
     <div className="w-full mx-auto px-4 lg:px-12 xl:px-20 sm:px-6 md:px-8 py-16 sm:py-35 font-bellefair bg-white">
       <div className="mb-10">
-        <div className="block sm:hidden mb-4">
-          <h3 className="text-lg text-gray-600 text-left">Customer Support</h3>
+        <div className=" sm:hidden  flex items-center ">
+          <h3 className="text-lg text-gray-600 text-left mr-2 ">Customer Support</h3>
+          <div className="w-[50px] border-t  border-gray-600" />
         </div>
         <div className="hidden sm:flex items-center mb-1">
           <h3 className="text-md text-gray-600 mr-2 font-bellefair">Customer Support</h3>

@@ -114,7 +114,7 @@ const Contact = () => {
       <div className="w-full lg:w-1/2 space-y-6 self-start">
         <div>
           <div className="flex items-center mb-1">
-            <h3 className="text-lg text-gray-600 mr-6">Contact Us</h3>
+            <h3 className="text-lg text-gray-600 mr-2">Contact Us</h3>
             <div className="w-[50px] border-t border-gray-600" />
           </div>
           <h1 className="text-4xl text-[var(--RandulaBlue)] font-bellefair">Let's Connect!</h1>

@@ -108,7 +108,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-gray-200 text-[var(--RandulaBlue)] px-6 py-8 text-sm overflow-hidden font-bellefair">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row">
+      <div className="max-w-8xl mx-auto flex flex-col md:flex-row">
         {/* Column 1: Logo and Text (Hidden on tablet and mobile) */}
         <div className="hidden lg:block w-full lg:w-3/7 mb-8 lg:mb-0 lg:pl-20">
           <button onClick={handleLogoClick} className="cursor-pointer">
@@ -138,7 +138,7 @@ export default function Footer() {
           </div>
 
           {/* Column 3: Support */}
-          <div className="sm:pl-4 md:pl-0">
+          <div className="sm:pl-4  md:pl-0">
             <h3 className="text-2xl mb-4">Support</h3>
             <ul className="space-y-3 text-gray-700">
               <li className="flex items-center sm:justify-start justify-center gap-2">
@@ -222,7 +222,7 @@ export default function Footer() {
       </div>
 
       <div className="max-w-7xl mx-auto mt-10 pt-6 border-t border-gray-400 text-center">
-        <div className="text-[var(--RandulaBlue)]  text-sm uppercase">
+        <div className="text-[var(--RandulaBlue)]  text-lg ">
           © {new Date().getFullYear()} Randula Jey Photography. All Rights Reserved.
         </div>
       </div>
