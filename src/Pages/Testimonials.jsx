@@ -186,7 +186,7 @@ export default function TestimonialsCompo() {
           </button>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap">
           {testimonials.map((_, index) => (
             <button
               key={index}

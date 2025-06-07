@@ -117,7 +117,7 @@ export default function RecentAlbums() {
         {!isTouchDevice && startIndex > 0 && (
           <button
             onClick={handlePrev}
-            className='absolute left-1 sm:left-5 top-1/2 -translate-y-1/2 z-10 bg-white p-2 rounded-full shadow-md hover:bg-gray-100'
+            className='absolute left-1 sm:left-5 top-1/2 -translate-y-1/2 z-10 bg-white p-2  shadow-md hover:bg-gray-100'
           >
             <FaChevronLeft className='text-[var(--RandulaBlue)] text-sm sm:text-base' />
           </button>
@@ -165,19 +165,19 @@ export default function RecentAlbums() {
         {!isTouchDevice && startIndex + itemsPerPage < images.length && (
           <button
             onClick={handleNext}
-            className='absolute right-1 sm:right-5 top-1/2 -translate-y-1/2 z-10 bg-white p-2 rounded-full shadow-md hover:bg-gray-100'
+            className='absolute right-1 sm:right-5 top-1/2 -translate-y-1/2 z-10 bg-white p-2 shadow-md hover:bg-gray-100'
           >
             <FaChevronRight className='text-[var(--RandulaBlue)] text-sm sm:text-base' />
           </button>
         )}
       </div>
 
-      <div className='flex justify-center items-center gap-2 mt-2'>
+      <div className='flex justify-center items-center mt-2'>
         {[...Array(totalPages)].map((_, i) => (
           <button
             key={i}
             onClick={() => goToPage(i)}
-            className={`w-2 h-2 sm:w-3 sm:h-3 transition-colors ${i === currentPage ? 'bg-[var(--RandulaBlue)]' : 'bg-gray-300'}`}
+            className={`w-2 h-2 sm:w-3 sm:h-3 transition-colors ${i === currentPage ? 'bg-[var(--RandulaBlue)] scale-125' : 'bg-gray-300'}`}
           />
         ))}
       </div>
