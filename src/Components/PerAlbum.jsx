@@ -3,9 +3,11 @@ import { useParams,  useLocation } from 'react-router-dom';
 import Masonry from 'react-masonry-css';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
-import AboutBgImg from '../assets/PackegesBgImg.jpg';
 import ScrollTopComp from './ScrollTopComp';
 import LoadingSpinnerCompo from './LoadingSpinnerCompo';
+
+import AlbumDefultBanner from '../assets/AlbumDefultBanner.jpg';
+import AlbumMobileBanner from '../assets/AlbumMobileBanner.jpg';
 
 const PerAlbum = () => {
   const { albumId } = useParams();
@@ -23,8 +25,6 @@ const PerAlbum = () => {
   const getImageUrl = (fileId) => {
     return `https://lh3.googleusercontent.com/d/${fileId}=s1000`;
   };
-
-
 
   const fetchImages = async () => {
     try {
@@ -66,10 +66,17 @@ const PerAlbum = () => {
       {/* Hero Section */}
       <div className="relative w-full h-72 md:h-72 overflow-hidden">
         <div className="w-full h-full">
+          {/* Desktop/Tablet Image */}
           <img
-            src={AboutBgImg}
-            alt="About Randula Jey"
-            className="w-full h-full object-cover"
+            src={AlbumDefultBanner}
+            alt="Album Default Banner"
+            className="hidden md:block w-full h-full object-cover"
+          />
+          {/* Mobile Image -*/}
+          <img
+            src={AlbumMobileBanner}
+            alt="Album Mobile Banner"
+            className="md:hidden w-full h-full object-cover"
           />
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent opacity-90 z-10" />
           <div className="absolute top-0 left-0 w-full h-full bg-black opacity-20 z-10" />

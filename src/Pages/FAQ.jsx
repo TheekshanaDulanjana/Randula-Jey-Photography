@@ -53,11 +53,19 @@ const Faq = () => {
   const rightFaqs = faqs.filter((_, index) => index % 2 !== 0);
 
   const renderFaqColumn = (faqs, openId, setOpenId) => {
-    return faqs.map(({ id, question, answer }) => {
+    return faqs.map(({ id, question, answer }, index) => {
       const isOpen = openId === id;
       return (
-        <div
+        <motion.div
           key={id}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ 
+            duration: 0.5,
+            delay: 0.1 + index * 0.05,
+            ease: [0.16, 0.77, 0.47, 0.97]
+          }}
+          viewport={{ once: true, margin: "-50px" }}
           className={`p-4 sm:p-5 cursor-pointer transition-all duration-200 ${
             isOpen ? 'bg-gray-200 shadow-sm' : 'bg-gray-100'
           }`}
@@ -73,30 +81,58 @@ const Faq = () => {
             <motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
-              transition={{ duration: 0.2 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
               className="overflow-hidden"
             >
               <p className="text-base sm:text-xl text-gray-600 mt-2">{answer}</p>
             </motion.div>
           )}
-        </div>
+        </motion.div>
       );
     });
   };
 
   return (
-    <div className="w-full mx-auto px-4 lg:px-12 xl:px-20 sm:px-6 md:px-8 py-16 sm:py-35 font-bellefair bg-white">
-      <div className="mb-10">
-        <div className=" sm:hidden  flex items-center ">
-          <h3 className="text-lg text-gray-600 text-left mr-2 ">Customer Support</h3>
-          <div className="w-[50px] border-t  border-gray-600" />
+    <motion.div 
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true }}
+      className="w-full mx-auto px-4 lg:px-12 xl:px-20 sm:px-6 md:px-8 py-16 sm:py-35 font-bellefair bg-white"
+    >
+      <motion.div 
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ 
+          duration: 0.6,
+          delay: 0.1,
+          ease: [0.16, 0.77, 0.47, 0.97]
+        }}
+        viewport={{ once: true }}
+        className="mb-10"
+      >
+        <div className="sm:hidden flex items-center">
+          <h3 className="text-lg text-gray-600 text-left mr-2">Customer Support</h3>
+          <div className="w-[50px] border-t border-gray-600" />
         </div>
         <div className="hidden sm:flex items-center mb-1">
           <h3 className="text-md text-gray-600 mr-2 font-bellefair">Customer Support</h3>
           <div className="w-[50px] border-t border-gray-600"></div>
         </div>
-        <h1 className="text-3xl sm:text-4xl text-[var(--RandulaBlue)] mb-6 text-left">Frequently Asked Questions</h1>
-      </div>
+        <motion.h1 
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ 
+            duration: 0.6,
+            delay: 0.2,
+            ease: [0.16, 0.77, 0.47, 0.97]
+          }}
+          viewport={{ once: true }}
+          className="text-3xl sm:text-4xl text-[var(--RandulaBlue)] mb-6 text-left"
+        >
+          Frequently Asked Questions
+        </motion.h1>
+      </motion.div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
         <div className="space-y-4 sm:space-y-5">
@@ -106,7 +142,7 @@ const Faq = () => {
           {renderFaqColumn(rightFaqs, rightOpenId, setRightOpenId)}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

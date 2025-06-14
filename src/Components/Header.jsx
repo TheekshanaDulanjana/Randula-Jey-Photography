@@ -144,7 +144,7 @@ export default function Header() {
         <div className="flex justify-between items-center max-w-full lg:px-12 xl:px-20 mx-auto px-4 sm:px-6 h-full">
           {/* Logo */}
           <button onClick={handleLogoClick} className="cursor-pointer">
-            <img src={RandulaJay_Logo} alt="Randula Jey Logo" className="h-13 w-auto transition-all" />
+            <img src={RandulaJay_Logo} alt="Randula Jey Logo" className="h-15 w-auto transition-all" />
           </button>
 
           {/* Desktop Nav */}

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import MainBG1 from '../assets/MainBG1.jpg';
+import MainBG1 from '../assets/HomeDefultImage01.jpg';
 import { FaAngleRight } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';

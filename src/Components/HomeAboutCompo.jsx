@@ -7,13 +7,13 @@ import { motion, useInView } from 'framer-motion';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 
-import HomeAbt01 from '../assets/HomeAbt01.jpg';
-import HomeAbt02 from '../assets/HomeAbt02.jpg';
-import HomeAbt03 from '../assets/HomeAbt03.jpg';  
-import HomeAbt04 from '../assets/HomeAbt04.jpg';
-import HomeAbt05 from '../assets/HomeAbt05.jpg';
+import HomeAboutImage01 from '../assets/HomeAboutImage01.jpg';
+import HomeAboutImage02 from '../assets/HomeAboutImage02.jpg';
+import HomeAboutImage03 from '../assets/HomeAboutImage03.jpg';
+import HomeAboutImage04 from '../assets/HomeAboutImage04.jpg';
+import HomeAboutImage05 from '../assets/HomeAboutImage05.jpg';
 
-const aboutImages = [HomeAbt01, HomeAbt02, HomeAbt03, HomeAbt04, HomeAbt05];
+const aboutImages = [HomeAboutImage01, HomeAboutImage02, HomeAboutImage03, HomeAboutImage04, HomeAboutImage05];
 
 const HomeAboutCompo = () => {
   const navigate = useNavigate();

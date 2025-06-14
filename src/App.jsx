@@ -120,7 +120,7 @@ function AppRoutes() {
 
 export default function App() {
   const [initialLoading, setInitialLoading] = useState(true);
-  useGoogleAnalytics(); // 🔥 Load GA on app start
+  useGoogleAnalytics(); 
 
   useEffect(() => {
     const timer = setTimeout(() => setInitialLoading(false), 5000);

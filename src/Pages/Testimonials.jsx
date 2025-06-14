@@ -5,9 +5,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import p1 from '../assets/p1.jpg';
 import p2 from '../assets/p2.jpg';
 import p3 from '../assets/p3.jpg';
-import l1 from '../assets/AboutBgImg.jpg';
-import l2 from '../assets/AboutBgImg.jpg';
-import l3 from '../assets/AboutBgImg.jpg';
+import l1 from '../assets/AboutDefultBanner.jpg';
+import l2 from '../assets/AboutDefultBanner.jpg';
+import l3 from '../assets/AboutDefultBanner.jpg';
 
 const testimonials = [
   {

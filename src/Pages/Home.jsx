@@ -14,19 +14,18 @@ import ScrollTopComp from '../Components/ScrollTopComp';
 import HomeAboutCompo from '../Components/HomeAboutCompo';
 import RecentAlbumCompo from '../Components/RecentAlbumCompo';
 
-import MainBG1L from '../assets/MainBG1.jpg';
-import MainBG2L from '../assets/MainBG2.jpg';
-import MainBG3L from '../assets/MainBG3.jpg';
-import MainBG4L from '../assets/MainBG4.jpg';
-import MainBG5L from '../assets/MainBG5.jpg';
-import MainBG6L from '../assets/MainBG6.jpg';
+import HomeDefultImage01 from '../assets/HomeDefultImage01.jpg';
+import HomeDefultImage02 from '../assets/HomeDefultImage02.jpg';
+import HomeDefultImage03 from '../assets/HomeDefultImage03.jpg';
+import HomeDefultImage04 from '../assets/HomeDefultImage04.jpg';
+import HomeDefultImage05 from '../assets/HomeDefultImage05.jpg';
 
-import MainBG1P from '../assets/MainBG1P.jpg';
-import MainBG2P from '../assets/MainBG2P.jpg'; 
-import MainBG3P from '../assets/MainBG3P.jpg';
-import MainBG4P from '../assets/MainBG4P.jpg';
+import HomeMobileImage01 from '../assets/HomeMobileImage01.jpg';
+import HomeMobileImage02 from '../assets/HomeMobileImage02.jpg';
+import HomeMobileImage03 from '../assets/HomeMobileImage03.jpg';
+import HomeMobileImage04 from '../assets/HomeMobileImage04.jpg';
 
-import wm1 from '../assets/Watermarks1.png';
+import Watermarks1 from '../assets/Watermarks1.png';
 
 const Home = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -46,8 +45,8 @@ const Home = () => {
   }, []);
 
   const currentSlideshowImages = isMobile || isTablet
-    ? [MainBG1P, MainBG2P, MainBG3P, MainBG4P]
-    : [MainBG1L, MainBG2L, MainBG3L, MainBG4L, MainBG5L, MainBG6L];
+    ? [HomeMobileImage01, HomeMobileImage02, HomeMobileImage03, HomeMobileImage04]
+    : [HomeDefultImage01, HomeDefultImage02, HomeDefultImage03, HomeDefultImage04, HomeDefultImage05];
 
   const swiperKey = `${isMobile || isTablet ? 'portrait' : 'landscape'}`;
 
@@ -102,12 +101,16 @@ const [recentRef, recentInView] = useInView({
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className={`absolute inset-0 flex flex-col -mt-10 items-start justify-center z-20 text-white ${isMobile ? 'px-4 ml-4' : isTablet ? 'px-10 ml-10' : 'px-20 ml-20'}`}
+          className={`absolute inset-0 flex flex-col -mt-10 items-start justify-center z-20 text-white 
+            ${isMobile ? 'px-4 ml-4' : isTablet ? 'px-10 ml-10' : 'px-20 ml-20'}`}
         >
-          <h1 className={`font-bellefair font-light mb-1 ${isMobile ? 'text-3xl -ml-[2px]' : isTablet ? 'text-5xl -mt-30 -ml-[3px]' : 'text-5xl -ml-[5px]'}`}>
+          <h1 className={`font-bellefair font-light mb-1 
+            ${isMobile ? 'text-3xl -ml-[2px]' : isTablet ? 'text-5xl -mt-30 -ml-[3px]' : 'text-5xl -ml-[5px]'}`}>
             Randula Jey Photography
           </h1>
-          <p className={`font-bellefair leading-6 ${isMobile ? 'text-lg mb-1' : isTablet ? 'text-xl mb-1.5' : 'text-xl mb-2'}`}>
+
+          <p className={`font-bellefair leading-6 
+            ${isMobile ? 'text-lg mb-1' : isTablet ? 'text-xl mb-1.5' : 'text-xl mb-2'}`}>
             {isMobile ? (
               <div className='leading-6'>
                 We Crown up Your Dreams!
@@ -127,21 +130,55 @@ const [recentRef, recentInView] = useInView({
           </p>
 
           <div className="flex items-center gap-1.5">
-            <p className={`font-bellefair text-xl ${isMobile ? 'text-sm' : 'text-lg'} mt-[4px]`}>Catch up with us on!</p>
-            <a href="https://wa.me/94719365797" target="_blank" rel="noopener noreferrer" className="w-4 h-4 flex items-center justify-center text-white hover:text-green-600"><SiWhatsapp size={isMobile ? 18 : 24} /></a>
+            <p className={`font-bellefair text-xl ${isMobile ? 'text-sm' : 'text-lg'} mt-[4px]`}>
+              Catch up with us on!
+            </p>
+
+            <a 
+            href="https://wa.me/94719365797" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="w-4 h-4 flex items-center justify-center text-white hover:text-green-600">
+              <SiWhatsapp size={isMobile ? 18 : 24} />
+            </a>
             <span>|</span>
-            <a href="https://www.facebook.com/RANDULAJEYPHOTOGRAPHY" target="_blank" rel="noopener noreferrer" className="w-4 h-4 flex items-center justify-center text-white hover:text-blue-500"><SiFacebook size={isMobile ? 18 : 24} /></a>
+
+            <a 
+            href="https://www.facebook.com/RANDULAJEYPHOTOGRAPHY" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="w-4 h-4 flex items-center justify-center text-white hover:text-blue-500">
+              <SiFacebook size={isMobile ? 18 : 24} />
+            </a>
             <span>|</span>
-            <a href="https://www.instagram.com/randula_jey_photography/" target="_blank" rel="noopener noreferrer" className="w-4 h-4 flex items-center justify-center text-white hover:text-pink-600"><SiInstagram size={isMobile ? 18 : 24} /></a>
+
+            <a 
+            href="https://www.instagram.com/randula_jey_photography/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="w-4 h-4 flex items-center justify-center text-white hover:text-pink-600">
+              <SiInstagram size={isMobile ? 18 : 24} />
+            </a>
             <span>|</span>
-            <a href="https://www.linkedin.com/in/randula-jey-bba4692a8/" target="_blank" rel="noopener noreferrer" className="w-4 h-4 flex items-center justify-center text-white hover:text-blue-400"><SiLinkedin size={isMobile ? 18 : 24} /></a>
+
+            <a 
+            href="https://www.linkedin.com/in/randula-jey-bba4692a8/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="w-4 h-4 flex items-center justify-center text-white hover:text-blue-400">
+              <SiLinkedin size={isMobile ? 18 : 24} />
+            </a>
+
           </div>
         </motion.div>
       </div>
 
       <div className="flex justify-center items-center">
-        <img src={wm1} className={`w-40 opacity-15 ${isMobile ? '-mb-20' : ''}`} 
-            alt="Watermark" />
+        <img 
+        src={Watermarks1} 
+        className={`w-40 opacity-15 ${isMobile ? '-mb-20' : ''}`} 
+        alt="Watermark" />
+
         <motion.div
           className={`absolute font-bilbo text-black opacity-20 ${
             isMobile ? 'text-4xl mt-2 ' : 

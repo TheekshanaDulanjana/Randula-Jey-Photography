@@ -2,14 +2,20 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { SiFacebook, SiInstagram, SiLinkedin, SiWhatsapp } from 'react-icons/si';
+import { 
+  SiFacebook, 
+  SiInstagram, 
+  SiLinkedin, 
+  SiWhatsapp } 
+  from 'react-icons/si';
 
-import AboutBgImg from '../assets/AboutBgImg.jpg';
-import aboutMan from '../assets/About01.jpg';
-import aboutMan2 from '../assets/About02.jpg';
-import ThreeInOne from '../assets/ThreeInOne.jpg';
-import ThreeInTwo from '../assets/ThreeInTwo.jpg';
-import ThreeInThree from '../assets/ThreeInThree.jpg';
+import AboutDefultBanner from '../assets/AboutDefultBanner.jpg';
+import AboutMobileBanner from '../assets/AboutMobileBanner.jpg'; 
+import AboutRandula from '../assets/AboutRandula.jpg';
+import AboutRandulaExperience from '../assets/AboutRandulaExperience.jpg';
+import AboutGalleryOne from '../assets/AboutGalleryOne.jpg';
+import AboutGalleryTwo from '../assets/AboutGalleryTwo.jpg';
+import AboutGalleryThree from '../assets/AboutGalleryThree.jpg';
 
 const About = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -48,7 +54,7 @@ const About = () => {
     },
   ];
 
-  const images = [ThreeInOne, ThreeInTwo, ThreeInThree];
+  const images = [AboutGalleryOne, AboutGalleryTwo, AboutGalleryThree];
 
   return (
     <div className="relative w-full mt-19">
@@ -81,10 +87,11 @@ const About = () => {
           animate={{ opacity: 1, filter: 'blur(0px)' }}
           transition={{ duration: 1.5, ease: [0.42, 0, 0.58, 1] }}
         >
+          {/* Mobile Image*/}
           <motion.img
-            src={AboutBgImg}
-            alt="About Randula Jey"
-            className="w-full h-full object-cover"
+            src={AboutMobileBanner}
+            alt="Mobile Banner"
+            className="w-full h-full object-cover md:hidden"
             initial={{ scale: 1.05 }}
             animate={{ scale: 1.15 }}
             transition={{
@@ -94,6 +101,22 @@ const About = () => {
               ease: [0.42, 0, 0.58, 1],
             }}
           />
+          
+          {/* Desktop/Tablet Image */}
+          <motion.img
+            src={AboutDefultBanner}
+            alt="About Default Banner"
+            className="w-full h-full object-cover hidden md:block"
+            initial={{ scale: 1.05 }}
+            animate={{ scale: 1.15 }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              repeatType: 'reverse',
+              ease: [0.42, 0, 0.58, 1],
+            }}
+          />
+          
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent opacity-90 z-10" />
         </motion.div>
 
@@ -128,10 +151,10 @@ const About = () => {
             transition={{ duration: 1, delay: 0.6 }}
           >
             <img
-              src={aboutMan}
+              src={AboutRandula}
               alt="About Randula Jay"
               className="w-64 sm:w-72 md:w-80 lg:w-96 h-auto object-cover cursor-pointer"
-              onClick={() => openImageModal(aboutMan)}
+              onClick={() => openImageModal(AboutRandula)}
             />
           </motion.div>
 
@@ -257,10 +280,10 @@ const About = () => {
             transition={{ duration: 1, delay: 0.6 }}
           >
             <img
-              src={aboutMan2}
+              src={AboutRandulaExperience}
               alt="Experience"
               className="w-64 sm:w-72 md:w-80 lg:w-96 h-auto object-cover cursor-pointer"
-              onClick={() => openImageModal(aboutMan2)}
+              onClick={() => openImageModal(AboutRandulaExperience)}
             />
           </motion.div>
         </div>

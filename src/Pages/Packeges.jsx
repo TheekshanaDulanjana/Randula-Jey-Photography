@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import PackegesBgImg from '../assets/PackegesBgImg.jpg';
 import PackageICompo from '../Components/PackageICompo';
 import PackageIICompo from '../Components/PackageIICompo';
 import { motion } from 'framer-motion';
 import 'aos/dist/aos.css';
 import ScrollTopComp from '../Components/ScrollTopComp';
+
+import PackegesDefultBanner from '../assets/PackegesDefultBanner.jpg';
+import PackegesMobileBanner from '../assets/PackegesMobileBanner.jpg';
 
 export default function Packages() {
   const [selectedPackage, setSelectedPackage] = useState('wedding');
@@ -18,10 +20,11 @@ export default function Packages() {
           animate={{ opacity: 1, filter: 'blur(0px)' }}
           transition={{ duration: 1.5, ease: [0.42, 0, 0.58, 1] }}
         >
+          {/* Mobile Image */}
           <motion.img
-            src={PackegesBgImg}
-            alt="About Randula Jay"
-            className="w-full h-full object-cover"
+            src={PackegesMobileBanner}
+            alt="Packages Mobile Banner"
+            className="w-full h-full object-cover md:hidden"
             initial={{ scale: 1.05 }}
             animate={{ scale: 1.15 }}
             transition={{
@@ -31,6 +34,22 @@ export default function Packages() {
               ease: [0.42, 0, 0.58, 1],
             }}
           />
+          
+          {/* Desktop/Tablet Image */}
+          <motion.img
+            src={PackegesDefultBanner}
+            alt="Packages Default Banner"
+            className="w-full h-full object-cover hidden md:block"
+            initial={{ scale: 1.05 }}
+            animate={{ scale: 1.15 }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              repeatType: 'reverse',
+              ease: [0.42, 0, 0.58, 1],
+            }}
+          />
+          
           <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-90 z-10" />
         </motion.div>
 
