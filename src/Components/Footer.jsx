@@ -209,7 +209,7 @@ export default function Footer() {
                 <SiInstagram className="w-4 mr-2 text-xl" /> Instagram
               </a>
               <a
-                href="/"
+                href="https://www.linkedin.com/in/randula-jey-bba4692a8/"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center text-lg hover:text-[var(--RandulaBlue)] transition-colors"
