@@ -151,7 +151,7 @@ export default function Footer() {
                   randulajeeyphotography@gmail.com
                 </a>
               </li>
-              <li className="text-lg flex items-center sm:justify-center justify-center gap-2 ">
+              <li className="text-lg  flex items-strat sm:justify-center justify-center gap-2 ">
                 <span>
                   No.36, Wilmot Balasuriya Mawatha,
                   <br /> Nupe,Matara, <br />
