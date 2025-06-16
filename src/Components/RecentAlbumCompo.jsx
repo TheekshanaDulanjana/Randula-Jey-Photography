@@ -76,7 +76,6 @@ export default function RecentAlbums() {
       </h3>
 
       <div className='relative w-full max-w-full mx-auto'>
-        {/* 💡 CSS Scroll Animation */}
         <style>{`
           @keyframes scroll-left {
             0% {
@@ -89,7 +88,7 @@ export default function RecentAlbums() {
           .animate-scroll-left {
             display: flex;
             width: max-content;
-            animation: scroll-left 60s linear infinite;
+            animation: scroll-left 90s linear infinite;
           }
           .hover\\:pause:hover {
             animation-play-state: paused;
@@ -108,21 +107,23 @@ export default function RecentAlbums() {
                 style={{ width: cardWidth, margin: '0.5rem' }}
                 onClick={() => handleClick(item)}
               >
-                {/* 🖼️ Image Section */}
-                <div className='relative w-full' style={{ height: `calc(${cardHeight} - 40px)` }}>
+
+                <div
+                  className='relative w-full overflow-hidden'
+                  style={{ height: `calc(${cardHeight} - 40px)` }}
+                >
                   <img
                     src={item.imageUrl}
                     alt='listing cover'
-                    className='w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110'
+                    className='w-full h-full object-cover scale-100 transition-transform duration-500 group-hover:scale-110'
                   />
-                  <div className='absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center'>
+                  <div className='absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none'>
                     <span className='text-white text-sm sm:text-xl font-bellefair drop-shadow-md'>
                       See Album
                     </span>
                   </div>
                 </div>
 
-                {/* 📛 Title Section */}
                 <div className='p-2 h-[40px] bg-gradient-to-t from-gray-100 to-white flex items-center justify-center'>
                   <p className='truncate text-sm sm:text-lg text-center font-bellefair text-[var(--RandulaBlue)]'>
                     {item.title}
@@ -134,7 +135,6 @@ export default function RecentAlbums() {
         </div>
       </div>
 
-      {/* 🔘 View More Button */}
       <div className="flex items-center -mt-3">
         <button
           title="Snapshots"
