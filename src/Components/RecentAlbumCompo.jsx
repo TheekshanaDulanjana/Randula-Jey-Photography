@@ -25,8 +25,8 @@ export default function RecentAlbums() {
   ];
 
   const duplicatedImages = [...images, ...images];
-  
   const navigate = useNavigate();
+
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [isTouchDevice, setIsTouchDevice] = useState(() =>
     'ontouchstart' in window || navigator.maxTouchPoints > 0
@@ -34,8 +34,7 @@ export default function RecentAlbums() {
 
   useEffect(() => {
     const handleResize = () => {
-      const width = window.innerWidth;
-      setWindowWidth(width);
+      setWindowWidth(window.innerWidth);
       setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
     };
 
@@ -59,9 +58,9 @@ export default function RecentAlbums() {
 
   const handleClick = (item) => {
     navigate(`/album/${item.albumId}`, {
-      state: { 
-        shootType: item.shootType, 
-        title: item.title 
+      state: {
+        shootType: item.shootType,
+        title: item.title,
       },
     });
   };
@@ -74,10 +73,11 @@ export default function RecentAlbums() {
 
       <h3 className="text-center text-lg sm:text-md text-gray-600 font-bellefair">
         What I have Created!
-      </h3>  
+      </h3>
 
       <div className='relative w-full max-w-full mx-auto'>
-        <style jsx>{`
+        {/* 💡 CSS Scroll Animation */}
+        <style>{`
           @keyframes scroll-left {
             0% {
               transform: translateX(0);
@@ -104,11 +104,12 @@ export default function RecentAlbums() {
             {duplicatedImages.map((item, index) => (
               <div
                 key={index}
-                className='group relative bg-white hover:shadow-sm transition-shadow overflow-hidden cursor-pointer inline-block'
-                style={{ width: cardWidth, height: cardHeight, margin: '0.5rem' }}
+                className='group bg-white hover:shadow-sm transition-shadow cursor-pointer inline-block overflow-hidden'
+                style={{ width: cardWidth, margin: '0.5rem' }}
                 onClick={() => handleClick(item)}
               >
-                <div className='relative overflow-hidden w-full h-full'>
+                {/* 🖼️ Image Section */}
+                <div className='relative w-full' style={{ height: `calc(${cardHeight} - 40px)` }}>
                   <img
                     src={item.imageUrl}
                     alt='listing cover'
@@ -120,7 +121,9 @@ export default function RecentAlbums() {
                     </span>
                   </div>
                 </div>
-                <div className='absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-gray-100 to-white'>
+
+                {/* 📛 Title Section */}
+                <div className='p-2 h-[40px] bg-gradient-to-t from-gray-100 to-white flex items-center justify-center'>
                   <p className='truncate text-sm sm:text-lg text-center font-bellefair text-[var(--RandulaBlue)]'>
                     {item.title}
                   </p>
@@ -131,6 +134,7 @@ export default function RecentAlbums() {
         </div>
       </div>
 
+      {/* 🔘 View More Button */}
       <div className="flex items-center -mt-3">
         <button
           title="Snapshots"
