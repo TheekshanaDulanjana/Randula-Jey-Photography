@@ -184,12 +184,13 @@ const About = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.6 }}
             >
-              Welcome to Randula Jey Wedding Photography, where your most cherished moments are transformed into
-              timeless memories. I'm Randula Jey, a passionate wedding photographer dedicated to capturing the beauty,
-              emotion, and joy of your special day. <br /><br />
-              With a creative eye and attention to detail, I strive to narrate your love story through stunning visuals
-              that you can treasure forever. From candid smiles to grand celebrations, my goal is to provide you with a
-              seamless and personalized photography experience.
+            I'm Randula Jey, a passionate fine-art wedding photographer dedicated to transforming fleeting moments 
+            into timeless memories. My artistic approach blends creativity with elegance, allowing me to tell 
+            authentic stories through every frame. Whether it’s a grand celebration or an intimate gathering, 
+            I focus on capturing the genuine emotions, beauty, and spirit that make each moment unforgettable. 
+            With a keen eye for detail and a love for storytelling, I specialize in Wedding, Event, Fashion, and 
+            Commercial photography — where your dreams are beautifully brought to life.  
+
             </motion.p>
 
             <motion.div
@@ -263,13 +264,15 @@ const About = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.6 }}
             >
-              Welcome to Randula Jey Wedding Photography, where your most cherished moments are transformed into
-              timeless memories. I'm Randula Jey, a passionate wedding photographer dedicated to capturing the beauty,
-              emotion, and joy of your special day. <br /><br />
-              With a creative eye and attention to detail, I strive to narrate your love story through stunning visuals
-              that you can treasure forever. From candid smiles to grand celebrations, my goal is to provide you with a
-              seamless and personalized photography experience. <br /><br />
-              Let's make your dream wedding unforgettable—one click at a time.
+              With over 4 years of hands-on experience, I’ve had the privilege of documenting 
+              hundreds of love stories and life events across Sri Lanka. I hold a certified 
+              professional photography qualification, which has shaped my technical expertise 
+              and creative vision. <br /> <br />
+               While I’m based in Colombo and Matara, my photography services 
+              extend island-wide, ensuring that no memory goes uncaptured, wherever you are. 
+              <br />
+              <br />I specialize in wedding photography, but also cover a wide range of events and 
+              commercial projects, delivering images that are both artistic and emotionally powerful.
             </motion.p>
           </div>
 

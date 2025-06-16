@@ -60,7 +60,7 @@ export default function Packages() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
           >
-            Packages <span className="text-2xl">2025</span>
+            Packages <span className="text-2xl">{new Date().getFullYear()} </span>
           </motion.h1>
 
           <motion.p

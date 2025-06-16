@@ -76,7 +76,7 @@ export default function RecentAlbums() {
         What I have Created!
       </h3>  
 
-      <div className='relative w-full max-w-screen-xl mx-auto'>
+      <div className='relative w-full max-w-full mx-auto'>
         <style jsx>{`
           @keyframes scroll-left {
             0% {

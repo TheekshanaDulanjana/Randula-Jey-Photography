@@ -143,12 +143,12 @@ export default function Footer() {
             <ul className="space-y-3 text-gray-700">
               <li className="flex items-center sm:justify-start justify-center gap-2">
                 <a
-                  href="https://mail.google.com/mail/?view=cm&to=janantharandula123@gmail.com"
+                  href="https://mail.google.com/mail/?view=cm&to=randulajeeyphotography@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className=" text-lg hover:text-[var(--RandulaBlue)]"
                 >
-                  janantharandula123@gmail.com
+                  randulajeeyphotography@gmail.com
                 </a>
               </li>
               <li className="text-lg flex items-center sm:justify-center justify-center gap-2 max-w-[500px]">
