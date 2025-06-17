@@ -98,79 +98,83 @@ const [recentRef, recentInView] = useInView({
         </Swiper>
 
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className={`absolute inset-0 flex flex-col -mt-10 items-start justify-center z-20 text-white 
-            ${isMobile ? 'px-4 ml-4' : isTablet ? 'px-10 ml-10' : 'px-20 ml-20'}`}
-        >
-          <h1 className={`font-bellefair font-light mb-1 
-            ${isMobile ? 'text-3xl -ml-[2px]' : isTablet ? 'text-5xl -mt-30 -ml-[3px]' : 'text-5xl -ml-[5px]'}`}>
-            Randula Jey Photography
-          </h1>
+  initial={{ opacity: 0, y: 50 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1, delay: 0.5 }}
+  className={`absolute inset-0 flex flex-col -mt-10 justify-center z-20 text-white
+    ${isMobile ? 'px-4 items-center text-center' : isTablet ? 'px-10 ml-10 items-start text-left' : 'px-20 ml-20 items-start text-left'}`}
+>
+  <h1 className={`font-bellefair font-light mb-1 
+    ${isMobile ? 'text-3xl' : isTablet ? 'text-5xl -mt-30 -ml-[3px]' : 'text-5xl -ml-[5px]'}`}>
+    Randula Jey Photography
+  </h1>
 
-          <p className={`font-bellefair leading-6 
-            ${isMobile ? 'text-lg mb-1' : isTablet ? 'text-xl mb-1.5' : 'text-xl mb-2'}`}>
-            {isMobile ? (
-              <div className='leading-6'>
-                We Crown up Your Dreams!
-                <br />Professional fine-art wedding photographer.
-                <br />Specializing in Wedding, Event, Fashion, and 
-                <br />Commercial photography.
-              </div>
-            ) : (
-              <>
-                We Crown up Your Dreams!
-                <br />I am a professional fine-art wedding photographer,
-                <br />Passionate about capturing your most cherished moments with creativity and elegance.
-                <br />I specialize in Wedding, Event, Fashion, and Commercial photography. 
-                <br />Where your dreams are beautifully brought to life.
-              </>
-            )}
-          </p>
+  <p className={`font-bellefair leading-6 
+    ${isMobile ? 'text-lg mb-1' : isTablet ? 'text-xl mb-1.5' : 'text-xl mb-2'}`}>
+    {isMobile ? (
+      <div className='leading-6'>
+        We Crown up Your Dreams!
+        <br />Professional fine-art wedding photographer.
+        <br />Specializing in Wedding, Event, Fashion, and 
+        <br />Commercial photography.
+      </div>
+    ) : (
+      <>
+        We Crown up Your Dreams!
+        <br />I am a professional fine-art wedding photographer,
+        <br />Passionate about capturing your most cherished moments with creativity and elegance.
+        <br />I specialize in Wedding, Event, Fashion, and Commercial photography. 
+        <br />Where your dreams are beautifully brought to life.
+      </>
+    )}
+  </p>
 
-          <div className="flex items-center gap-1.5">
-            <p className={`font-bellefair text-xl ${isMobile ? 'text-sm' : 'text-lg'} mt-[4px]`}>
-              Catch up with us on!
-            </p>
+  <div className="flex items-center gap-1.5">
+    <p className={`font-bellefair text-xl ${isMobile ? 'text-sm' : 'text-lg'} mt-[4px]`}>
+      Catch up with us on!
+    </p>
 
-            <a 
-            href="https://wa.me/94719365797" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="w-4 h-4 flex items-center justify-center text-white hover:text-green-600">
-              <SiWhatsapp size={isMobile ? 18 : 24} />
-            </a>
-            <span>|</span>
+    <a 
+      href="https://wa.me/94719365797" 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      className="w-4 h-4 flex items-center justify-center text-white hover:text-green-600"
+    >
+      <SiWhatsapp size={isMobile ? 18 : 24} />
+    </a>
+    <span>|</span>
 
-            <a 
-            href="https://www.facebook.com/RANDULAJEYPHOTOGRAPHY" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="w-4 h-4 flex items-center justify-center text-white hover:text-blue-500">
-              <SiFacebook size={isMobile ? 18 : 24} />
-            </a>
-            <span>|</span>
+    <a 
+      href="https://www.facebook.com/RANDULAJEYPHOTOGRAPHY" 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      className="w-4 h-4 flex items-center justify-center text-white hover:text-blue-500"
+    >
+      <SiFacebook size={isMobile ? 18 : 24} />
+    </a>
+    <span>|</span>
 
-            <a 
-            href="https://www.instagram.com/randula_jey_photography/" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="w-4 h-4 flex items-center justify-center text-white hover:text-pink-600">
-              <SiInstagram size={isMobile ? 18 : 24} />
-            </a>
-            <span>|</span>
+    <a 
+      href="https://www.instagram.com/randula_jey_photography/" 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      className="w-4 h-4 flex items-center justify-center text-white hover:text-pink-600"
+    >
+      <SiInstagram size={isMobile ? 18 : 24} />
+    </a>
+    <span>|</span>
 
-            <a 
-            href="https://www.linkedin.com/in/randula-jey-bba4692a8/" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="w-4 h-4 flex items-center justify-center text-white hover:text-blue-400">
-              <SiLinkedin size={isMobile ? 18 : 24} />
-            </a>
+    <a 
+      href="https://www.linkedin.com/in/randula-jey-bba4692a8/" 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      className="w-4 h-4 flex items-center justify-center text-white hover:text-blue-400"
+    >
+      <SiLinkedin size={isMobile ? 18 : 24} />
+    </a>
+  </div>
+</motion.div>
 
-          </div>
-        </motion.div>
       </div>
 
       <div className="flex justify-center items-center">

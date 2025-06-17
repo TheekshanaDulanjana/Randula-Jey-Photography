@@ -31,7 +31,7 @@ const ScrollTopComp = () => {
     showScrollButton && (
       <button
         onClick={scrollToTop}
-        className="fixed cursor-pointer bottom-8 right-20 w-8 h-8 flex items-center justify-center  backdrop-blur-sm bg-transparent text-[var(--RandulaBlue)] shadow-lg outline transition-transform transform hover:scale-110 group z-[60] overflow-hidden"
+        className="fixed cursor-pointer bottom-8 right-10 w-8 h-8 flex items-center justify-center  backdrop-blur-sm bg-transparent text-[var(--RandulaBlue)] shadow-lg outline transition-transform transform hover:scale-110 group z-[60] overflow-hidden"
         aria-label="Scroll to top"
       >
         <span className="relative z-10 transition-colors duration-300 group-hover:text-[var(--RandulaBlue)]">

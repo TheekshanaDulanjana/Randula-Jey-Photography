@@ -7,7 +7,6 @@ import {
 } from "react-router-dom";
 
 import Header from "./Components/Header";
-import Audio from "./Components/Audio";
 import Home from "./Pages/Home";
 import Packeges from "./Pages/Packeges";
 import MainAlbum from "./Pages/MainAlbum";
@@ -109,7 +108,6 @@ function AppRoutes() {
     <>
       {loading && <LoadingSpinnerCompo />}
       <Header />
-      <Audio />
       <Routes>
         <Route
           path="/"
