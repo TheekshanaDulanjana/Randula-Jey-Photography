@@ -62,7 +62,7 @@ const [recentRef, recentInView] = useInView({
 
   return (
     <>
-      <div className="w-full mt-19 h-screen overflow-hidden relative">
+      <div className="w-full h-fit overflow-hidden relative">
         <Swiper
           key={swiperKey}
           spaceBetween={0}
@@ -91,7 +91,7 @@ const [recentRef, recentInView] = useInView({
                     ease: [0.42, 0, 0.58, 1],
                   }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-90 z-10" />
+                <div className="absolute inset-0 bg-black opacity-20 z-10" />
               </div>
             </SwiperSlide>
           ))}
@@ -101,7 +101,7 @@ const [recentRef, recentInView] = useInView({
   initial={{ opacity: 0, y: 50 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ duration: 1, delay: 0.5 }}
-  className={`absolute inset-0 flex flex-col -mt-10 justify-center z-20 text-white
+  className={`absolute inset-0 flex flex-col mt-10 justify-center z-20 text-white
     ${isMobile ? 'px-4 items-center text-center' : isTablet ? 'px-10 ml-10 items-start text-left' : 'px-20 ml-20 items-start text-left'}`}
 >
   <h1 className={`font-bellefair font-light mb-1 

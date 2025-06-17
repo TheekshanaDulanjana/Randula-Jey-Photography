@@ -9,15 +9,19 @@ import l1 from '../assets/AboutDefultBanner.jpg';
 import l2 from '../assets/AboutDefultBanner.jpg';
 import l3 from '../assets/AboutDefultBanner.jpg';
 
+import IsuruTestimonial from '../assets/IsuruTestimonial.jpg';
+import AhinsaTestimonial from '../assets/AhinsaTestimonial.jpg';
+import ShashiniYasiruTestimonial from '../assets/ShashiniYasiruTestimonial.jpg';
+
 const testimonials = [
   {
     id: 1,
     image: l1,
-    coupleImage: p1,
-    names: "Sanduni & Perera",
-    date: "24th of April 2025",
-    message: "Randula exceeded all our expectations with his exceptional work. His attention to detail and ability to capture the essence of our special day was remarkable. Every photo tells a story, and we couldn't be happier with the results."
-  },
+    coupleImage: ShashiniYasiruTestimonial,
+    names: "Shashini & Yasiru",
+    date: "23rd of May 2025",
+    message: "Highly Recommended❤️ \nThank you to Randula Jay Photography for capturing every emotion, smile, and unforgettable moment of our special day. Your talent for turning memories into art is unmatched. We’re beyond grateful for the beautiful collection of photos that we’ll treasure for a lifetime!"},
+
   {
     id: 2,
     image: l2,
@@ -30,9 +34,49 @@ const testimonials = [
     id: 3,
     image: l3,
     coupleImage: p3,
-    names: "Third & Example",
-    date: "30th of June 2025",
-    message: "Working with Randula was a pleasure from start to finish. His creative vision and technical expertise resulted in photographs that we will cherish forever. He made us feel comfortable throughout the entire process."
+    names: "Dilan Kaluarachchi ",
+    date: " ",
+    message: "He is very friendly \nWho has a great sense of art. \nGifted us a quality output combined with nice shots and super editing.❤️ \nThank you randula malli❤️ \nමාතර අංක එකෙ photographer❤️"
+  },
+  {
+    id: 3,
+    image: l3,
+    coupleImage: p3,
+    names: "Sineth & Sanchila",
+    date: " ",
+    message: "Highly Recommended 💯❤️\nRandula done the shoot better than i experienced \nReally great ❤️\nHighly Recommended 💯❤️"
+  },
+    {
+    id: 3,
+    image: l3,
+    coupleImage: p3,
+    names: "Shalini & Harshana",
+    date: "09th of June 2024",
+    message: "Highly Recommend Randula Jay Photography..🖤♥️ \nIt was done more beautifully than we expected 🖤♥️"
+  },
+      {
+    id: 3,
+    image: l3,
+    coupleImage: p3,
+    names: "Kavishka",
+    date: "09th of June 2024",
+    message: "Highly Recommended Photographer ❤️❤️ \nවැඩේ හිතුවෙ නැති විදියට සුපිරියටම තිබුනා. \nThank You So Much Brother Make Our Beautiful Day Even More Beautiful😍😍😍"
+  },
+        {
+    id: 3,
+    image: AhinsaTestimonial,
+    coupleImage: IsuruTestimonial,
+    names: "Isuru & Ahinsa",
+    date: "09th of June 2024",
+    message: "Randula Jey \nTharusha Rupasinghe I just want to say thank you Randula jey  for your great work and for being so very patient with us all and your professionalism is second to none. Thank you soo much bro and will be sure to recommend you to anyone we know who is looking for a photographer. 🤛🖤"
+  },
+        {
+    id: 3,
+    image: ShashiniYasiruTestimonial,
+    coupleImage: AhinsaTestimonial,
+    names: "Ahinsa & Isuru",
+    date: "09th of June 2024",
+    message: " So first I have to say something about Randula jey ❤️🫶🏻, like before I met him I thought that he is a person with some attitude and all. \nBut after meeting him Facebook page I was really pleased and happy to meet him. Because he is a person that I saw in photography industry as the most humbled person with great quality with him.🥵 Keeping these quality has make him the person today in this photography industry. Today he is a brand in his industry. \nI have no doubt of recommending him for your lovely day to be more special and more colorful, capturing by his camera lenses.Thank you so much for the lovely moment capturing by you and your team Tharusha Rupasinghe,The pictures are filled with qualities and perfect.🫶🏻❤️"
   }
 ];
 
@@ -79,9 +123,9 @@ export default function TestimonialsCompo() {
   const nextTestimonial = testimonials[(currentIndex + 1) % testimonials.length];
 
   return (
-    <div className="relative w-full max-w-screen-2xl mx-auto pt-30 my-12 px-4 sm:px-6 lg:px-0">
+    <div className="relative w-full max-w-full mx-auto pt-30 my-12 px-4 sm:px-6 lg:px-0">
       {/* Section Title for Mobile */}
-      <div className="lg:hidden mb-8 text-center">
+      <div className="lg:hidden mb-8  text-center">
         <h1 className="text-3xl text-[var(--RandulaBlue)] font-bellefair">
           Customer Experiences That Inspire!
         </h1>
@@ -111,7 +155,7 @@ export default function TestimonialsCompo() {
                 alt="Couple"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+              {/* <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div> */}
 
               <div className="absolute bottom-4 right-4 flex items-end gap-2">
                 <motion.div
@@ -144,7 +188,7 @@ export default function TestimonialsCompo() {
             {/* Right - Text Section */}
             <div className="w-full lg:w-1/2 p-6 sm:p-8 md:p-10 bg-gray-50 relative flex flex-col justify-center">
               {/* Section Title for Desktop */}
-              <div className='hidden lg:block pb-15'>
+              <div className='hidden lg:block pb-10 '>
                 <h1 className="text-3xl md:text-4xl text-[var(--RandulaBlue)] font-bellefair">
                   Customer Experiences That Inspire!
                 </h1>
@@ -160,8 +204,13 @@ export default function TestimonialsCompo() {
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                <p className="text-gray-800 leading-relaxed font-bellefair text-base sm:text-lg md:text-xl mb-6 max-w-xl text-justify">
-                  {currentTestimonial.message}
+                <p className="text-gray-800 leading-6 font-bellefair text-base sm:text-lg md:text-xl mb-6 max-w-full text-justify">
+                  {currentTestimonial.message.split('\n').map((line, index) => (
+                    <React.Fragment key={index}>
+                      {line}
+                      <br />
+                    </React.Fragment>
+                  ))}
                 </p>
                 <p className="text-[var(--RandulaBlue)] font-bellefair text-lg sm:text-md border-l-4 border-[var(--RandulaBlue)] pl-2 italic">
                   {currentTestimonial.names} <br />
@@ -175,17 +224,6 @@ export default function TestimonialsCompo() {
 
       {/* Navigation Buttons */}
       <div className="flex justify-center gap-4 mt-6 sm:mt-8">
-        {/* Only show these buttons on larger screens */}
-        <div className="hidden lg:flex">
-          <button
-            onClick={handlePrev}
-            className="bg-white p-2 pl-2 rounded-full shadow-sm hover:bg-gray-100 transition-colors cursor-pointer duration-200"
-            aria-label="Previous testimonial"
-          >
-            <FaChevronLeft className="text-[var(--RandulaBlue)] text-sm sm:text-base" />
-          </button>
-        </div>
-
         <div className="flex items-center gap">
           {testimonials.map((_, index) => (
             <button
@@ -194,19 +232,10 @@ export default function TestimonialsCompo() {
                 setDirection(index > currentIndex ? 1 : -1);
                 setCurrentIndex(index);
               }}
-              className={`w-2 h-2 sm:w-3 sm:h-3  transition-all duration-200 ${currentIndex === index ? 'bg-[var(--RandulaBlue)] scale-125' : 'bg-gray-300'}`}
+              className={`w-2 h-2 sm:w-3 sm:h-3 hover:cursor-pointer  transition-all duration-200 ${currentIndex === index ? 'bg-[var(--RandulaBlue)] scale-100' : 'bg-gray-300'}`}
               aria-label={`Go to testimonial ${index + 1}`}
             />
           ))}
-        </div>
-        <div className="hidden lg:flex">
-          <button
-            onClick={handleNext}
-            className="bg-white p-2 pr-2 rounded-full shadow-sm hover:bg-gray-100 transition-colors cursor-pointer duration-200"
-            aria-label="Next testimonial"
-          >
-            <FaChevronRight className="text-[var(--RandulaBlue)] text-sm sm:text-base" />
-          </button>
         </div>
       </div>
     </div>
