@@ -8,7 +8,6 @@ import {
 
 import Header from "./Components/Header";
 import Home from "./Pages/Home";
-import Packeges from "./Pages/Packeges";
 import MainAlbum from "./Pages/MainAlbum";
 import FAQ from "./Pages/FAQ";
 import Contact from "./Pages/Contact";
@@ -62,9 +61,6 @@ function UpdateTitle() {
     switch (location.pathname) {
       case "/":
         pageTitle = "Randula Jey Photography";
-        break;
-      case "/packages":
-        pageTitle = "Offers | Randula Jey Photography";
         break;
       case "/main-album":
         pageTitle = "Snapshots | Randula Jey Photography";
@@ -120,7 +116,6 @@ function AppRoutes() {
             </>
           }
         />
-        <Route path="/packages" element={<Packeges />} />
         <Route path="/main-album" element={<MainAlbum />} />
         <Route path="/about" element={<About />} />
         <Route path="/" element={<MainAlbumCompo />} />

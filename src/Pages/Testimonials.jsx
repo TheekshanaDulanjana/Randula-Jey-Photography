@@ -1,10 +1,9 @@
 import React, { useState, useRef } from 'react';
-import { FaChevronLeft, FaChevronRight, FaQuoteRight } from 'react-icons/fa';
+import {FaQuoteRight } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 
-import p1 from '../assets/p1.jpg';
-import p2 from '../assets/p2.jpg';
-import p3 from '../assets/p3.jpg';
+import p2 from '../assets/MethniBilan.jpg';
+import p3 from '../assets/MethniBilan.jpg';
 import l1 from '../assets/AboutDefultBanner.jpg';
 import l2 from '../assets/AboutDefultBanner.jpg';
 import l3 from '../assets/AboutDefultBanner.jpg';

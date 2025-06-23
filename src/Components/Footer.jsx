@@ -58,7 +58,6 @@ export default function Footer() {
     { path: '/about', label: 'Essence' },
     { path: '/main-album', label: 'Snapshots' },
     { path: '#testimonials', label: 'Testimonials', sectionId: 'testimonials' },
-    { path: '/packages', label: 'Offers' },
     { path: '#faq', label: 'Support', sectionId: 'faq' },
     { path: '#contact', label: 'Inquiry', sectionId: 'contact' },
   ];
@@ -139,18 +138,8 @@ export default function Footer() {
 
           {/* Column 3: Support */}
           <div className="sm:pl-4  md:pl-0">
-            <h3 className="text-2xl mb-4">Support</h3>
+            <h3 className="text-2xl mb-4">Address</h3>
             <ul className="space-y-3 text-gray-700">
-              <li className="flex items-center sm:justify-start justify-center gap-2">
-                <a
-                  href="https://mail.google.com/mail/?view=cm&to=randulajeeyphotography@gmail.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className=" text-lg hover:text-[var(--RandulaBlue)]"
-                >
-                  randulajeeyphotography@gmail.com
-                </a>
-              </li>
               <li className="text-lg  flex items-center sm:justify-start justify-center gap-2">
                 <span>
                   No.36, Wilmot Balasuriya Mawatha,

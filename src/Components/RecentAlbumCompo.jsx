@@ -3,25 +3,25 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useSwipeable } from 'react-swipeable';
 
-import Album01 from '../assets/p1.jpg';
-import Album02 from '../assets/p2.jpg';
-import Album03 from '../assets/p3.jpg';
-import Album04 from '../assets/PackegesDefultBanner.jpg';
-import Album05 from '../assets/PackegesDefultBanner.jpg';
-import Album06 from '../assets/PackegesDefultBanner.jpg';
-import Album07 from '../assets/l4.jpg';
-import Album08 from '../assets/PackegesDefultBanner.jpg';
+import SitharaNaveen from '../assets/SitharaNaveen.jpg';
+import AhinsaIsuruWED from '../assets/AhinsaIsuruWED.jpg';
+import SinethSanchila from '../assets/SinethSanchila.jpg';
+import NisharaYuwani from '../assets/NisharaYuwani.jpg';
+import GathikaIshara from '../assets/GathikaIshara.jpg';
+import DilshikaPiyath from '../assets/DilshikaPiyath.jpg';
+import UthpalaSanjanu from '../assets/UthpalaSanjanu.jpg';
+import SasiniHarshana from '../assets/SasiniHarshana.jpg';
 
 export default function RecentAlbums() {
   const images = [
-    { title: 'Album 01', imageUrl: Album01, albumId: '1fmLG-eS0eexGCXKCmtm3_rqurE8mQqPY', shootType: 'Wedding shoot' },
-    { title: 'Album 02', imageUrl: Album02, albumId: '1fmLG-eS0eexGCXKCmtm3_rqurE8mQqPY', shootType: 'Wedding shoot' },
-    { title: 'Album 03', imageUrl: Album03, albumId: '1AyuxZzZ6sZGmAhxDF3C2QxCo6x1i-O4d', shootType: 'Wedding shoot' },
-    { title: 'Album 04', imageUrl: Album04, albumId: '1AyuxZzZ6sZGmAhxDF3C2QxCo6x1i-O4d', shootType: 'Wedding shoot' },
-    { title: 'Album 05', imageUrl: Album05, albumId: '1JlzQI7ardd15MhnQSASlf2vyyrSFcjo_', shootType: 'Wedding shoot' },
-    { title: 'Album 06', imageUrl: Album06, albumId: '1AyuxZzZ6sZGmAhxDF3C2QxCo6x1i-O4d', shootType: 'Wedding shoot' },
-    { title: 'Album 07', imageUrl: Album07, albumId: '1AyuxZzZ6sZGmAhxDF3C2QxCo6x1i-O4d', shootType: 'Wedding shoot' },
-    { title: 'Album 08', imageUrl: Album08, albumId: '1AyuxZzZ6sZGmAhxDF3C2QxCo6x1i-O4d', shootType: 'Wedding shoot' },
+  { title: 'Ahinsa & Isuru', imageUrl: AhinsaIsuruWED, albumId: '1cViwIfG95MKOc2VCY67JV84gVJj8VAUT?usp' , shootType:'Wedding Shoot' },
+  { title: 'Dilshika & Piyath', imageUrl: DilshikaPiyath, albumId: '1HJ7zGmNS_XGs9vle_Chl0AQ33k9ZU28i?usp' , shootType:'Wedding shoot' },
+  { title: 'Gathika & Ishara', imageUrl: GathikaIshara, albumId: '1W0OFwobZPXeF6-ro-f6X9YA3sd2wQi0K?usp' , shootType:'Wedding shoot' },
+  { title: 'Nishara & Yuwani', imageUrl: NisharaYuwani, albumId: '1p0CgymRWsXhZEIGA9_kQVJaKo_bMASn_?usp' , shootType:'Wedding shoot' },
+  { title: 'Sasini & Harshana', imageUrl: SasiniHarshana, albumId: '1YS3vVBdMTD1lsm8it-mjLSMOIwRtt5PN?usp'  , shootType:'Pre Shoot'},
+  { title: 'Sineth & Sanchila', imageUrl: SinethSanchila, albumId: '14JcmqfBtzQtEmp4nTjfY1LpxbDWjtxmG?usp' , shootType:'Wedding Shoot' },
+  { title: 'Sithara & Naveen', imageUrl: SitharaNaveen, albumId: '1Zkfs1cADg990HGJ73ij4gSgJy5dE0jxo?usp' , shootType:'Wedding shoot' },
+  { title: 'Uthpala & Sanjanu', imageUrl: UthpalaSanjanu, albumId: '14VbZJn_9wkdrFdlrREB6oRcmc7Vb_KVq?usp'  , shootType:'Pre Shoot'},
   ];
 
   const duplicatedImages = [...images, ...images];

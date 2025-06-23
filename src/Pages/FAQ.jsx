@@ -91,8 +91,8 @@ const Faq = () => {
           }`}
           onClick={() => setOpenId(isOpen ? null : id)}
         >
-          <div className="flex justify-between items-start text-[var(--RandulaBlue)] text-xl sm:text-xl ">
-            <span>{id}. {question}</span>
+          <div className="flex justify-between items-start text-[var(--RandulaBlue)] text-xl sm:text-xl">
+            <span className="break-words">{id}. {question}</span>
             <span className={`text-xl transition-transform duration-200 ${isOpen ? 'rotate-0' : 'rotate-45'}`}>
               {isOpen ? '−' : '+'}
             </span>
@@ -106,7 +106,7 @@ const Faq = () => {
                 transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 className="overflow-hidden"
               >
-                <p className="text-base sm:text-xl text-gray-600 mt-2">{answer}</p>
+                <p className="text-base sm:text-xl text-gray-600 mt-2 break-words">{answer}</p>
               </motion.div>
             )}
           </AnimatePresence>
@@ -121,16 +121,12 @@ const Faq = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
       viewport={{ once: true }}
-      className="w-full mx-auto px-4 lg:px-12 xl:px-20 sm:px-6 md:px-8 py-16 sm:py-35 font-bellefair bg-white"
+      className="w-full max-w-full mx-auto px-4 sm:px-6 md:px-8 lg:px-15 py-16 font-bellefair bg-white overflow-hidden"
     >
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: 0.6,
-          delay: 0.1,
-          ease: [0.22, 1, 0.36, 1]
-        }}
+        transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
         viewport={{ once: true }}
         className="mb-10"
       >
@@ -145,11 +141,7 @@ const Faq = () => {
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.6,
-            delay: 0.2,
-            ease: [0.22, 1, 0.36, 1]
-          }}
+          transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           viewport={{ once: true }}
           className="text-3xl sm:text-4xl text-[var(--RandulaBlue)] mb-6 text-left"
         >
@@ -157,7 +149,7 @@ const Faq = () => {
         </motion.h1>
       </motion.div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 overflow-hidden">
         <div className="space-y-4 sm:space-y-5">
           {renderFaqColumn(leftFaqs, leftOpenId, setLeftOpenId)}
         </div>

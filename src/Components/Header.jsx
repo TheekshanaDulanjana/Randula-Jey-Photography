@@ -86,7 +86,6 @@ export default function Header() {
     { path: '/about', label: 'Essence' },
     { path: '/main-album', label: 'Snapshots' },
     { path: '#testimonials', label: 'Testimonials', sectionId: 'testimonials' },
-    { path: '/packages', label: 'Offers' },
     { path: '#faq', label: 'Support', sectionId: 'faq' },
     { path: '#contact', label: 'Inquiry', sectionId: 'contact' },
   ];
