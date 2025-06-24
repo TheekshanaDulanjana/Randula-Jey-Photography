@@ -2,20 +2,21 @@ import React, { useState, useRef } from 'react';
 import {FaQuoteRight } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 
-import p2 from '../assets/MethniBilan.jpg';
 import p3 from '../assets/MethniBilan.jpg';
 import l1 from '../assets/AboutDefultBanner.jpg';
-import l2 from '../assets/AboutDefultBanner.jpg';
 import l3 from '../assets/AboutDefultBanner.jpg';
 
 import IsuruTestimonial from '../assets/IsuruTestimonial.jpg';
 import AhinsaTestimonial from '../assets/AhinsaTestimonial.jpg';
 import ShashiniYasiruTestimonial from '../assets/ShashiniYasiruTestimonial.jpg';
+import SinethSanchilaTestimonials from '../assets/SinethSanchilaTestimonials.jpg';
+import DakshindaWasanaTestimonial  from '../assets/DakshindaWasanaTestimonial.jpg';
+import ShaliniHarshanaTestimonial from '../assets/ShaliniHarshanaTestimonial.jpg';
 
 const testimonials = [
   {
     id: 1,
-    image: l1,
+    image: DakshindaWasanaTestimonial,
     coupleImage: ShashiniYasiruTestimonial,
     names: "Shashini & Yasiru",
     date: "23rd of May 2025",
@@ -23,46 +24,30 @@ const testimonials = [
 
   {
     id: 2,
-    image: l2,
-    coupleImage: p2,
-    names: "Another & Couple",
-    date: "15th of May 2025",
-    message: "Randula exceeded all our expectations with his exceptional work. His attention to detail and ability to capture the essence of our special day was remarkable. Every photo tells a story, and we couldn't be happier with the results."
+    image: SinethSanchilaTestimonials,
+    coupleImage: DakshindaWasanaTestimonial,
+    names: "Dakshinda & Wasana",
+    date: "01st of February 2025",
+    message: "Working with Randula Jey photography for our wedding was one of the best decisions we made. From the very beginning, they made us feel at ease with their professionalism and friendly approach. On the big day, they captured every moment perfectly—from the candid smiles to the little details we almost missed.The photos turned out absolutely stunning! Every shot told a story, and they really captured the essence of the day. We especially loved the way they balanced posed and natural shots, making sure we had the perfect mix of timeless memories. The quality of the images is beyond what we expected—so vibrant, crisp, and full of emotion.We also appreciated how organized and efficient they were, ensuring everything went smoothly without feeling rushed. If you're looking for a photographer who is not only talented but also great to work with, I highly recommend Randula Jey photography! ❤️"
   },
   {
     id: 3,
-    image: l3,
-    coupleImage: p3,
-    names: "Dilan Kaluarachchi ",
-    date: " ",
-    message: "He is very friendly \nWho has a great sense of art. \nGifted us a quality output combined with nice shots and super editing.❤️ \nThank you randula malli❤️ \nමාතර අංක එකෙ photographer❤️"
-  },
-  {
-    id: 3,
-    image: l3,
-    coupleImage: p3,
+    image: ShaliniHarshanaTestimonial,
+    coupleImage: SinethSanchilaTestimonials,
     names: "Sineth & Sanchila",
-    date: " ",
+    date: "24th of August 2024",
     message: "Highly Recommended 💯❤️\nRandula done the shoot better than i experienced \nReally great ❤️\nHighly Recommended 💯❤️"
   },
     {
-    id: 3,
-    image: l3,
-    coupleImage: p3,
+    id: 4,
+    image: IsuruTestimonial,
+    coupleImage: ShaliniHarshanaTestimonial,
     names: "Shalini & Harshana",
-    date: "09th of June 2024",
+    date: "28th of August 2024",
     message: "Highly Recommend Randula Jay Photography..🖤♥️ \nIt was done more beautifully than we expected 🖤♥️"
   },
-      {
-    id: 3,
-    image: l3,
-    coupleImage: p3,
-    names: "Kavishka",
-    date: "09th of June 2024",
-    message: "Highly Recommended Photographer ❤️❤️ \nවැඩේ හිතුවෙ නැති විදියට සුපිරියටම තිබුනා. \nThank You So Much Brother Make Our Beautiful Day Even More Beautiful😍😍😍"
-  },
-        {
-    id: 3,
+  {
+    id: 5,
     image: AhinsaTestimonial,
     coupleImage: IsuruTestimonial,
     names: "Isuru & Ahinsa",
@@ -70,7 +55,7 @@ const testimonials = [
     message: "Randula Jey \nTharusha Rupasinghe I just want to say thank you Randula jey  for your great work and for being so very patient with us all and your professionalism is second to none. Thank you soo much bro and will be sure to recommend you to anyone we know who is looking for a photographer. 🤛🖤"
   },
         {
-    id: 3,
+    id: 5,
     image: ShashiniYasiruTestimonial,
     coupleImage: AhinsaTestimonial,
     names: "Ahinsa & Isuru",
@@ -148,7 +133,7 @@ export default function TestimonialsCompo() {
             className="flex flex-col lg:flex-row w-full"
           >
             {/* Left - Image Section */}
-            <div className="w-full lg:w-1/2 h-64 sm:h-80 md:h-96 lg:h-[500px] overflow-hidden relative">
+            <div className="w-full lg:w-1/2 h-64 sm:h-80 md:h-96 lg:h-[550px] overflow-hidden relative">
               <img
                 src={currentTestimonial.coupleImage}
                 alt="Couple"

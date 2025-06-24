@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import 'aos/dist/aos.css';
 
 const Faq = () => {
   const [leftOpenId, setLeftOpenId] = useState(null);
   const [rightOpenId, setRightOpenId] = useState(null);
+
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
 
   const faqs = [
     {
@@ -73,19 +79,11 @@ const Faq = () => {
   const rightFaqs = faqs.filter((_, index) => index % 2 !== 0);
 
   const renderFaqColumn = (faqs, openId, setOpenId) => {
-    return faqs.map(({ id, question, answer }, index) => {
+    return faqs.map(({ id, question, answer }) => {
       const isOpen = openId === id;
       return (
-        <motion.div
+        <div
           key={id}
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.6,
-            delay: 0.15 + index * 0.08,
-            ease: [0.22, 1, 0.36, 1]
-          }}
-          viewport={{ once: true, margin: "-50px" }}
           className={`p-4 sm:p-5 cursor-pointer transition-all duration-200 ${
             isOpen ? 'bg-gray-200 shadow-sm' : 'bg-gray-100'
           }`}
@@ -97,39 +95,25 @@ const Faq = () => {
               {isOpen ? '−' : '+'}
             </span>
           </div>
-          <AnimatePresence initial={false}>
-            {isOpen && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                className="overflow-hidden"
-              >
-                <p className="text-base sm:text-xl text-gray-600 mt-2 break-words">{answer}</p>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </motion.div>
+          {isOpen && (
+            <div className="overflow-hidden">
+              <p className="text-base sm:text-xl text-gray-600 mt-2 break-words">{answer}</p>
+            </div>
+          )}
+        </div>
       );
     });
   };
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 60 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-      viewport={{ once: true }}
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
       className="w-full max-w-full mx-auto px-4 sm:px-6 md:px-8 lg:px-15 py-16 font-bellefair bg-white overflow-hidden"
     >
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-        viewport={{ once: true }}
-        className="mb-10"
-      >
+      <div className="mb-10">
         <div className="sm:hidden flex items-center">
           <h3 className="text-lg text-gray-600 text-left mr-2">Customer Support</h3>
           <div className="w-[50px] border-t border-gray-600" />
@@ -138,16 +122,10 @@ const Faq = () => {
           <h3 className="text-md text-gray-600 mr-2 font-bellefair">Customer Support</h3>
           <div className="w-[50px] border-t border-gray-600"></div>
         </div>
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          viewport={{ once: true }}
-          className="text-3xl sm:text-4xl text-[var(--RandulaBlue)] mb-6 text-left"
-        >
+        <h1 className="text-3xl sm:text-4xl text-[var(--RandulaBlue)] mb-6 text-left">
           Frequently Asked Questions
-        </motion.h1>
-      </motion.div>
+        </h1>
+      </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 overflow-hidden">
         <div className="space-y-4 sm:space-y-5">

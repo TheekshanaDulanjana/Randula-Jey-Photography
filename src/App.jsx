@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import {
   BrowserRouter,
   Routes,
@@ -7,16 +7,17 @@ import {
 } from "react-router-dom";
 
 import Header from "./Components/Header";
-import Home from "./Pages/Home";
-import MainAlbum from "./Pages/MainAlbum";
-import FAQ from "./Pages/FAQ";
-import Contact from "./Pages/Contact";
-import About from "./Pages/About";
 import Footer from "./Components/Footer";
 import LoadingSpinnerCompo from "./Components/LoadingSpinnerCompo";
-import PerAlbum from "./Components/PerAlbum";
-import MainAlbumCompo from "./Components/MainAlbumCompo";
-import Testimonials from "./Pages/Testimonials";
+
+const Home = lazy(() => import("./Pages/Home"));
+const About = lazy(() => import("./Pages/About"));
+const FAQ = lazy(() => import("./Pages/FAQ"));
+const Contact = lazy(() => import("./Pages/Contact"));
+const MainAlbum = lazy(() => import("./Pages/MainAlbum"));
+const PerAlbum = lazy(() => import("./Components/PerAlbum"));
+const MainAlbumCompo = lazy(() => import("./Components/MainAlbumCompo"));
+const Testimonials = lazy(() => import("./Pages/Testimonials"));
 
 function useGoogleAnalytics() {
   const location = useLocation();
@@ -91,7 +92,7 @@ function AppRoutes() {
   const location = useLocation();
   const [loading, setLoading] = useState(false);
 
-  useGoogleAnalytics(); 
+  useGoogleAnalytics();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -104,23 +105,25 @@ function AppRoutes() {
     <>
       {loading && <LoadingSpinnerCompo />}
       <Header />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <section id="home"><Home /></section>
-              <section id="testimonials"><Testimonials /></section>
-              <div className="mt-10"><section id="faq"><FAQ /></section></div>
-              <div className="-mt-10"><section id="contact"><Contact /></section></div>
-            </>
-          }
-        />
-        <Route path="/main-album" element={<MainAlbum />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/" element={<MainAlbumCompo />} />
-        <Route path="/album/:albumId" element={<PerAlbum />} />
-      </Routes>
+      <Suspense fallback={<LoadingSpinnerCompo />}>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <section id="home"><Home /></section>
+                <section id="testimonials"><Testimonials /></section>
+                <div className="mt-10"><section id="faq"><FAQ /></section></div>
+                <div className="-mt-10"><section id="contact"><Contact /></section></div>
+              </>
+            }
+          />
+          <Route path="/main-album" element={<MainAlbum />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/" element={<MainAlbumCompo />} />
+          <Route path="/album/:albumId" element={<PerAlbum />} />
+        </Routes>
+      </Suspense>
       <Footer />
     </>
   );

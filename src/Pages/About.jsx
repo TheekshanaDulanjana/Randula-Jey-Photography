@@ -11,7 +11,7 @@ import {
 
 import AboutDefultBanner from '../assets/AboutDefultBanner.jpg';
 import AboutMobileBanner from '../assets/AboutMobileBanner.jpg'; 
-import AboutRandula from '../assets/AboutRandula.jpg';
+import AboutRandula from '../assets/AboutRandula.png';
 import AboutRandulaExperience from '../assets/AboutRandulaExperience.jpg';
 import AboutGalleryOne from '../assets/AboutGalleryOne.jpg';
 import AboutGalleryTwo from '../assets/AboutGalleryTwo.jpg';
@@ -68,6 +68,8 @@ const About = () => {
               src={selectedImage}
               alt="Enlarged view"
               className="max-w-full max-h-screen object-contain"
+              loading="lazy"
+              decoding="async"
             />
             <button
               className="absolute top-4 right-4 text-white text-2xl"
@@ -100,6 +102,8 @@ const About = () => {
               repeatType: 'reverse',
               ease: [0.42, 0, 0.58, 1],
             }}
+            loading="lazy"
+            decoding="async"
           />
           
           {/* Desktop/Tablet Image */}
@@ -115,6 +119,8 @@ const About = () => {
               repeatType: 'reverse',
               ease: [0.42, 0, 0.58, 1],
             }}
+            loading="lazy"
+            decoding="async"
           />
           
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent opacity-90 z-10" />
@@ -155,6 +161,8 @@ const About = () => {
               alt="About Randula Jay"
               className="w-64 sm:w-72 md:w-80 lg:w-96 h-auto object-cover cursor-pointer"
               onClick={() => openImageModal(AboutRandula)}
+              loading="lazy"
+              decoding="async"
             />
           </motion.div>
 
@@ -230,6 +238,8 @@ const About = () => {
               src={image}
               alt={`Image ${index + 1}`}
               className="w-full sm:w-[35%] h-48 sm:h-56 md:h-64 lg:h-72 object-cover"
+              loading="lazy"
+              decoding="async"
             />
           ))}
         </div>
@@ -287,6 +297,8 @@ const About = () => {
               alt="Experience"
               className="w-64 sm:w-72 md:w-80 lg:w-96 h-auto object-cover cursor-pointer"
               onClick={() => openImageModal(AboutRandulaExperience)}
+              loading="lazy"
+              decoding="async"
             />
           </motion.div>
         </div>

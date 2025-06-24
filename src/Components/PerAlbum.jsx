@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { useParams,  useLocation } from 'react-router-dom';
+import React, { useState, useEffect, useCallback } from 'react';
+import { useParams, useLocation } from 'react-router-dom';
 import Masonry from 'react-masonry-css';
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import ScrollTopComp from './ScrollTopComp';
 import LoadingSpinnerCompo from './LoadingSpinnerCompo';
 
@@ -53,26 +53,36 @@ const PerAlbum = () => {
     setSelectedImageIndex(null);
   };
 
-  const showPrevImage = () => {
+  const showPrevImage = useCallback(() => {
     setSelectedImageIndex((prev) => (prev > 0 ? prev - 1 : folderData.length - 1));
-  };
+  }, [folderData]);
 
-  const showNextImage = () => {
+  const showNextImage = useCallback(() => {
     setSelectedImageIndex((prev) => (prev < folderData.length - 1 ? prev + 1 : 0));
-  };
+  }, [folderData]);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (selectedImageIndex !== null) {
+        if (e.key === 'ArrowRight') showNextImage();
+        if (e.key === 'ArrowLeft') showPrevImage();
+        if (e.key === 'Escape') closeImage();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedImageIndex, showNextImage, showPrevImage]);
 
   return (
     <div className="relative w-full mt-19">
       {/* Hero Section */}
       <div className="relative w-full h-72 md:h-72 overflow-hidden">
         <div className="w-full h-full">
-          {/* Desktop/Tablet Image */}
           <img
             src={AlbumDefultBanner}
             alt="Album Default Banner"
             className="hidden md:block w-full h-full object-cover"
           />
-          {/* Mobile Image -*/}
           <img
             src={AlbumMobileBanner}
             alt="Album Mobile Banner"
@@ -82,11 +92,8 @@ const PerAlbum = () => {
           <div className="absolute top-0 left-0 w-full h-full bg-black opacity-20 z-10" />
         </div>
 
-        {/* Text Overlay */}
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-20">
-          <h1 className="text-4xl md:text-6xl font-bellefair text-white">
-            {title}
-          </h1>
+          <h1 className="text-4xl md:text-6xl font-bellefair text-white">{title}</h1>
           <p className="text-xl text-white font-bellefair mt-2">{shootType}</p>
         </div>
       </div>
@@ -107,7 +114,7 @@ const PerAlbum = () => {
               {folderData.map((file, index) => (
                 <motion.div
                   key={file.id}
-                  className="mb-4 relative overflow-hidden shadow-lg group cursor-pointer"
+                  className="mb-4 relative overflow-hidden group cursor-pointer"
                   onClick={() => openImage(index)}
                   initial={{ scale: 0.5, opacity: 0 }}
                   whileInView={{ scale: 1, opacity: 1 }}
@@ -117,7 +124,7 @@ const PerAlbum = () => {
                   <img
                     src={getImageUrl(file.id)}
                     alt={file.name}
-                    className="w-full h-auto object-cover text -sm transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-auto object-cover text-sm transition-transform duration-500 group-hover:scale-105"
                   />
                 </motion.div>
               ))}
@@ -126,42 +133,60 @@ const PerAlbum = () => {
         </div>
       </div>
 
+      {/* Modal with buttons */}
       <AnimatePresence>
         {selectedImageIndex !== null && (
           <motion.div
-            className="fixed inset-0 bg-black/70 backdrop-blur-xs flex items-center justify-center z-50"
+            className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <div className="relative max-w-5xl w-full p-4 flex items-center justify-center">
-              <motion.img
-                src={getImageUrl(folderData[selectedImageIndex].id)}
-                alt="Full Image"
+            <div className="relative max-w-full w-full px-4 flex items-center justify-center">
+              {/* Left Arrow (hidden on mobile and tablet) */}
+              <button
+                onClick={showPrevImage}
+                className="absolute left-4 md:left-8 text-white text-3xl md:text-5xl z-50 hidden md:inline"
+              >
+                <FaChevronLeft />
+              </button>
+
+              {/* Image */}
+              <motion.div
+                key={folderData[selectedImageIndex].id}
+                className="max-h-[90vh] w-full max-w-5xl"
+                drag={window.innerWidth <= 768 ? 'x' : false}
+                dragElastic={0.2}
+                onDragEnd={(e, info) => {
+                  if (info.offset.x < -100) showNextImage();
+                  else if (info.offset.x > 100) showPrevImage();
+                }}
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.8, opacity: 0 }}
                 transition={{ duration: 0.5, ease: 'easeInOut' }}
-                className="max-h-[90vh] w-auto rounded-md shadow-2xl"
-              />
+              >
+                <img
+                  src={getImageUrl(folderData[selectedImageIndex].id)}
+                  alt="Full Image"
+                  className="max-h-[90vh] w-auto mx-auto"
+                />
+              </motion.div>
 
+              {/* Right Arrow (hidden on mobile and tablet) */}
+              <button
+                onClick={showNextImage}
+                className="absolute right-4 md:right-8 text-white text-3xl md:text-5xl z-50 hidden md:inline"
+              >
+                <FaChevronRight />
+              </button>
+
+              {/* Close Button */}
               <button
                 className="absolute top-4 right-4 text-white text-3xl"
                 onClick={closeImage}
               >
                 &times;
-              </button>
-              <button
-                className="absolute left-2 sm:left-5 top-1/2 -translate-y-1/2 z-10 bg-white p-2 rounded-full shadow-md hover:bg-gray-100"
-                onClick={showPrevImage}
-              >
-                <FaChevronLeft className="text-[var(--RandulaBlue)] text-sm sm:text-base" />
-              </button>
-              <button
-                className="absolute right-2 sm:right-5 top-1/2 -translate-y-1/2 z-10 bg-white p-2 rounded-full shadow-md hover:bg-gray-100"
-                onClick={showNextImage}
-              >
-                <FaChevronRight className="text-[var(--RandulaBlue)] text-sm sm:text-base" />
               </button>
             </div>
           </motion.div>
