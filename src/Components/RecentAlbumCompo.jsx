@@ -146,7 +146,7 @@ export default function RecentAlbums() {
           className="mt-5 block mx-auto font-bellefair px-3 sm:px-4 py-1 text-sm sm:text-base bg-transparent text-[var(--RandulaBlue)] border border-[var(--RandulaBlue)] relative overflow-hidden backdrop-blur-sm transition duration-300 group"
         >
           <span className="relative z-10 group-hover:text-white">View more albums</span>
-          <span className="absolute left-0 bottom-0 w-0 h-full bg-[var(--RandulaBlue)] transition-all duration-300 group-hover:w-full z-0" />
+          <span className="absolute left-0 bottom-0 w-0 h-full cursor-pointer bg-[var(--RandulaBlue)] transition-all duration-300 group-hover:w-full z-0" />
         </button>
       </div>
     </div>

@@ -70,7 +70,7 @@ const HomeAboutCompo = () => {
               className="font-bellefair px-5 sm:px-6 py-1 sm:py-2 text-sm sm:text-base bg-transparent text-[var(--RandulaBlue)] border border-[var(--RandulaBlue)] relative overflow-hidden backdrop-blur-sm transition duration-300 group"
             >
               <span className="relative z-10 group-hover:text-white">more info...</span>
-              <span className="absolute left-0 bottom-0 w-0 h-full bg-[var(--RandulaBlue)] transition-all duration-300 group-hover:w-full z-0" />
+              <span className="absolute left-0 bottom-0 w-0 h-full bg-[var(--RandulaBlue)] transition-all cursor-pointer duration-300 group-hover:w-full z-0" />
             </button>
           </div>
         </motion.div>
