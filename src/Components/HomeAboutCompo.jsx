@@ -51,11 +51,13 @@ const HomeAboutCompo = () => {
           </h1>
 
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-800 font-bellefair leading-relaxed mb-4 sm:mb-6">
-            Capture your most cherished moments with timeless beauty and elegance.<br className="hidden sm:block" />
-            Every photograph tells a story, reflecting love and creativity.<br className="hidden sm:block" />
-            Specializing in wedding, event, and commercial photography,<br className="hidden sm:block" />
-            I create memories that last forever.<br className="hidden sm:block" />
-            Let's make your special day unforgettable.
+
+            Randula Jey Photography represents a modern, detail-driven brand that 
+            blends artistic vision with a refined style.
+            Known for its signature aesthetic and personalized service,
+            the brand stands for quality, elegance, and a deep commitment to
+            visual storytelling that speaks beyond words.<br className="hidden sm:block" /> <br />
+            We don’t just take photos — We craft lasting impressions that feel as real as the moment itself.
           </p>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
