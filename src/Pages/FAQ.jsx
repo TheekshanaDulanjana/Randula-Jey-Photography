@@ -78,8 +78,8 @@ const Faq = () => {
   const leftFaqs = faqs.filter((_, index) => index % 2 === 0);
   const rightFaqs = faqs.filter((_, index) => index % 2 !== 0);
 
-  const renderFaqColumn = (faqs, openId, setOpenId) => {
-    return faqs.map(({ id, question, answer }) => {
+  const renderFaqColumn = (faqsArray, openId, setOpenId) => {
+    return faqsArray.map(({ id, question, answer }) => {
       const isOpen = openId === id;
       return (
         <div
@@ -127,7 +127,15 @@ const Faq = () => {
         </h1>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 overflow-hidden">
+      {/* Mobile: Single Column */}
+      <div className="block sm:hidden space-y-4">
+        {faqs.map(({ id, question, answer }) =>
+          renderFaqColumn([{ id, question, answer }], leftOpenId, setLeftOpenId)
+        )}
+      </div>
+
+      {/* Desktop: Two Columns */}
+      <div className="hidden sm:grid sm:grid-cols-2 gap-4 sm:gap-5">
         <div className="space-y-4 sm:space-y-5">
           {renderFaqColumn(leftFaqs, leftOpenId, setLeftOpenId)}
         </div>
