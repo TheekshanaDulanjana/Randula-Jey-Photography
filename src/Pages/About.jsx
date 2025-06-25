@@ -38,7 +38,7 @@ const About = () => {
       title: 'Facebook',
       href: 'https://www.facebook.com/janantha.randula.73',
       icon: <SiFacebook />,
-      color: 'text-blue-800',
+      color: 'text-blue-600',
     },
     {
       title: 'Instagram',
