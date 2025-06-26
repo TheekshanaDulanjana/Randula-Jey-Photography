@@ -59,29 +59,24 @@ function UpdateTitle() {
 
   useEffect(() => {
     let pageTitle = "Randula Jey Photography";
+    const path = location.pathname;
 
-    switch (location.pathname) {
-      case "/":
-        pageTitle = "Randula Jey Photography";
-        break;
-      case "/main-album":
-        pageTitle = "Snapshots | Randula Jey Photography";
-        break;
-      case "/about":
-        pageTitle = "Essence | Randula Jey Photography";
-        break;
-      case "/#testimonials":
-        pageTitle = "Testimonials | Randula Jey Photography";
-        break;
-      case "/#faq":
-        pageTitle = "Support | Randula Jey Photography";
-        break;
-      case "/#contact":
-        pageTitle = "Inquiry | Randula Jey Photography";
-        break;
-      default:
-        pageTitle = "Page Not Found | Randula Jey Photography"; 
-        break;
+    if (path === "/") {
+      pageTitle = "Randula Jey Photography";
+    } else if (path === "/main-album") {
+      pageTitle = "Snapshots | Randula Jey Photography";
+    } else if (path === "/about") {
+      pageTitle = "Essence | Randula Jey Photography";
+    } else if (path === "/#testimonials") {
+      pageTitle = "Testimonials | Randula Jey Photography";
+    } else if (path === "/#faq") {
+      pageTitle = "Support | Randula Jey Photography";
+    } else if (path === "/#contact") {
+      pageTitle = "Inquiry | Randula Jey Photography";
+    } else if (/^\/album\/[a-zA-Z0-9_-]+$/.test(path)) {
+      pageTitle = "Album | Randula Jey Photography";
+    } else {
+      pageTitle = "Page Not Found | Randula Jey Photography";
     }
 
     document.title = pageTitle;
@@ -124,8 +119,6 @@ function AppRoutes() {
           <Route path="/about" element={<About />} />
           <Route path="/" element={<MainAlbumCompo />} />
           <Route path="/album/:albumId" element={<PerAlbum />} />
-
-          {/* ✅ Catch-all 404 route */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
