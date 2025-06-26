@@ -9,6 +9,7 @@ import {
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import LoadingSpinnerCompo from "./Components/LoadingSpinnerCompo";
+import NotFound from "./Pages/NotFound"; 
 
 const Home = lazy(() => import("./Pages/Home"));
 const About = lazy(() => import("./Pages/About"));
@@ -79,6 +80,7 @@ function UpdateTitle() {
         pageTitle = "Inquiry | Randula Jey Photography";
         break;
       default:
+        pageTitle = "Page Not Found | Randula Jey Photography"; 
         break;
     }
 
@@ -122,6 +124,9 @@ function AppRoutes() {
           <Route path="/about" element={<About />} />
           <Route path="/" element={<MainAlbumCompo />} />
           <Route path="/album/:albumId" element={<PerAlbum />} />
+
+          {/* ✅ Catch-all 404 route */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
       <Footer />
