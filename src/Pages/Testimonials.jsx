@@ -2,10 +2,6 @@ import React, { useState, useRef } from 'react';
 import {FaQuoteRight } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 
-import p3 from '../assets/MethniBilan.jpg';
-import l1 from '../assets/AboutDefultBanner.jpg';
-import l3 from '../assets/AboutDefultBanner.jpg';
-
 import IsuruTestimonial from '../assets/IsuruTestimonial.jpg';
 import AhinsaTestimonial from '../assets/AhinsaTestimonial.jpg';
 import ShashiniYasiruTestimonial from '../assets/ShashiniYasiruTestimonial.jpg';
