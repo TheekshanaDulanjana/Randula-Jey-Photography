@@ -8,51 +8,65 @@ import ShashiniYasiruTestimonial from '../assets/ShashiniYasiruTestimonial.jpg';
 import SinethSanchilaTestimonials from '../assets/SinethSanchilaTestimonials.jpg';
 import DakshindaWasanaTestimonial  from '../assets/DakshindaWasanaTestimonial.jpg';
 import ShaliniHarshanaTestimonial from '../assets/ShaliniHarshanaTestimonial.jpg';
+import NuwinyaKaveenTestimonial from '../assets/NuwinyaKaveenTestimonial.jpg';
+import RandikaIneshaTestimonial from '../assets/RandikaIneshaTestimonial.jpg';
+
 
 const testimonials = [
-  {
+    {
     id: 1,
-    image: DakshindaWasanaTestimonial,
+    coupleImage: RandikaIneshaTestimonial,
+    names: "Randika & Inesha",
+    date: "13rd of July 2025",
+    message: "Highly recommended Randula Jey Photography for weddings and any special event! He is incredibly professional, talented, and friendly. From start to finish, he made us feel comfortable and confident. He puts in so much effort to ensure every shot is perfect, and the final results were absolutely stunning. The photos and videos we received were absolutely impressive, capturing real emotions and memories that we'll treasure forever.If you want someone who truly cares about making your memories beautiful, he's the one to go with! 📸✨❤️"
+  },
+
+    {
+    id: 2,
+    coupleImage: NuwinyaKaveenTestimonial,
+    names: "Nuwinya & Kaveen",
+    date: "10th of June 2025",
+    message: "Highly recommended 🌟 \nThank you, Randula Jey Photography, for capturing the moments our hearts will never forget. \,Your lens didn’t just take pictures, it told our story, framed in love, emotion, and timeless beauty. 💫❤️"
+  },
+
+  
+  {
+    id: 3,
     coupleImage: ShashiniYasiruTestimonial,
     names: "Shashini & Yasiru",
     date: "23rd of May 2025",
     message: "Highly Recommended❤️ \nThank you to Randula Jay Photography for capturing every emotion, smile, and unforgettable moment of our special day. Your talent for turning memories into art is unmatched. We’re beyond grateful for the beautiful collection of photos that we’ll treasure for a lifetime!"},
 
   {
-    id: 2,
-    image: SinethSanchilaTestimonials,
+    id: 4,
     coupleImage: DakshindaWasanaTestimonial,
     names: "Dakshinda & Wasana",
     date: "01st of February 2025",
     message: "Working with Randula Jey photography for our wedding was one of the best decisions we made. From the very beginning, they made us feel at ease with their professionalism and friendly approach. On the big day, they captured every moment perfectly—from the candid smiles to the little details we almost missed.The photos turned out absolutely stunning! Every shot told a story, and they really captured the essence of the day. We especially loved the way they balanced posed and natural shots, making sure we had the perfect mix of timeless memories. The quality of the images is beyond what we expected—so vibrant, crisp, and full of emotion.We also appreciated how organized and efficient they were, ensuring everything went smoothly without feeling rushed. If you're looking for a photographer who is not only talented but also great to work with, I highly recommend Randula Jey photography! ❤️"
   },
   {
-    id: 3,
-    image: ShaliniHarshanaTestimonial,
+    id: 5,
     coupleImage: SinethSanchilaTestimonials,
     names: "Sineth & Sanchila",
     date: "24th of August 2024",
     message: "Highly Recommended 💯❤️\nRandula done the shoot better than i experienced \nReally great ❤️\nHighly Recommended 💯❤️"
   },
     {
-    id: 4,
-    image: IsuruTestimonial,
+    id: 6,
     coupleImage: ShaliniHarshanaTestimonial,
     names: "Shalini & Harshana",
     date: "28th of August 2024",
     message: "Highly Recommend Randula Jay Photography..🖤♥️ \nIt was done more beautifully than we expected 🖤♥️"
   },
   {
-    id: 5,
-    image: AhinsaTestimonial,
+    id: 7,
     coupleImage: IsuruTestimonial,
     names: "Isuru & Ahinsa",
     date: "09th of June 2024",
     message: "Randula Jey \nTharusha Rupasinghe I just want to say thank you Randula jey  for your great work and for being so very patient with us all and your professionalism is second to none. Thank you soo much bro and will be sure to recommend you to anyone we know who is looking for a photographer. 🤛🖤"
   },
         {
-    id: 5,
-    image: ShashiniYasiruTestimonial,
+    id: 8,
     coupleImage: AhinsaTestimonial,
     names: "Ahinsa & Isuru",
     date: "09th of June 2024",
